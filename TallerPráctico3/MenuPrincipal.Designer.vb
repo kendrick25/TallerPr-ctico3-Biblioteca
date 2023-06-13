@@ -65,7 +65,7 @@ Partial Class MenuPrincipal
         Me.Border.Margin = New System.Windows.Forms.Padding(0)
         Me.Border.Name = "Border"
         Me.Border.Padding = New System.Windows.Forms.Padding(1)
-        Me.Border.Size = New System.Drawing.Size(536, 327)
+        Me.Border.Size = New System.Drawing.Size(736, 453)
         Me.Border.TabIndex = 1
         '
         'TableLayoutPanel1
@@ -80,7 +80,7 @@ Partial Class MenuPrincipal
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(534, 325)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(734, 451)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'MovForm
@@ -103,7 +103,7 @@ Partial Class MenuPrincipal
         Me.MovForm.Name = "MovForm"
         Me.MovForm.RowCount = 1
         Me.MovForm.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.MovForm.Size = New System.Drawing.Size(534, 30)
+        Me.MovForm.Size = New System.Drawing.Size(734, 30)
         Me.MovForm.TabIndex = 0
         '
         'Label1
@@ -131,7 +131,7 @@ Partial Class MenuPrincipal
         Me.BtnMin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnMin.Location = New System.Drawing.Point(384, 0)
+        Me.BtnMin.Location = New System.Drawing.Point(584, 0)
         Me.BtnMin.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnMin.Name = "BtnMin"
         Me.BtnMin.Size = New System.Drawing.Size(50, 30)
@@ -148,7 +148,7 @@ Partial Class MenuPrincipal
         Me.BtnMax.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnMax.Location = New System.Drawing.Point(434, 0)
+        Me.BtnMax.Location = New System.Drawing.Point(634, 0)
         Me.BtnMax.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnMax.Name = "BtnMax"
         Me.BtnMax.Size = New System.Drawing.Size(50, 30)
@@ -165,7 +165,7 @@ Partial Class MenuPrincipal
         Me.BtnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnClose.Location = New System.Drawing.Point(484, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(684, 0)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(50, 30)
@@ -181,7 +181,7 @@ Partial Class MenuPrincipal
         Me.MenuStrip1.MinimumSize = New System.Drawing.Size(0, 30)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(0)
-        Me.MenuStrip1.Size = New System.Drawing.Size(284, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(201, 30)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -201,7 +201,7 @@ Partial Class MenuPrincipal
         Me.VerLibrosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.VerLibrosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.VerLibrosToolStripMenuItem.Name = "VerLibrosToolStripMenuItem"
-        Me.VerLibrosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VerLibrosToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.VerLibrosToolStripMenuItem.Text = "Ver Libros"
         '
         'VerMenuToolStripMenuItem
@@ -210,7 +210,7 @@ Partial Class MenuPrincipal
         Me.VerMenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarLibroToolStripMenuItem, Me.EliminarLibrosToolStripMenuItem})
         Me.VerMenuToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.VerMenuToolStripMenuItem.Name = "VerMenuToolStripMenuItem"
-        Me.VerMenuToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VerMenuToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.VerMenuToolStripMenuItem.Text = "Opciones"
         '
         'AgregarLibroToolStripMenuItem
@@ -218,7 +218,7 @@ Partial Class MenuPrincipal
         Me.AgregarLibroToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.AgregarLibroToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.AgregarLibroToolStripMenuItem.Name = "AgregarLibroToolStripMenuItem"
-        Me.AgregarLibroToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgregarLibroToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.AgregarLibroToolStripMenuItem.Text = "Agregar Libros"
         '
         'EliminarLibrosToolStripMenuItem
@@ -226,7 +226,7 @@ Partial Class MenuPrincipal
         Me.EliminarLibrosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.EliminarLibrosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.EliminarLibrosToolStripMenuItem.Name = "EliminarLibrosToolStripMenuItem"
-        Me.EliminarLibrosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EliminarLibrosToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.EliminarLibrosToolStripMenuItem.Text = "Eliminar Libros"
         '
         'CerrarTodoToolStripMenuItem1
@@ -234,7 +234,7 @@ Partial Class MenuPrincipal
         Me.CerrarTodoToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CerrarTodoToolStripMenuItem1.ForeColor = System.Drawing.Color.White
         Me.CerrarTodoToolStripMenuItem1.Name = "CerrarTodoToolStripMenuItem1"
-        Me.CerrarTodoToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarTodoToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
         Me.CerrarTodoToolStripMenuItem1.Text = "Cerrar Todo"
         '
         'OtrosToolStripMenuItem
@@ -261,7 +261,7 @@ Partial Class MenuPrincipal
         Me.Panel1.Location = New System.Drawing.Point(0, 30)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(534, 295)
+        Me.Panel1.Size = New System.Drawing.Size(734, 421)
         Me.Panel1.TabIndex = 1
         '
         'ContForms
@@ -272,7 +272,7 @@ Partial Class MenuPrincipal
         Me.ContForms.Margin = New System.Windows.Forms.Padding(0)
         Me.ContForms.Name = "ContForms"
         Me.ContForms.SelectedIndex = 0
-        Me.ContForms.Size = New System.Drawing.Size(534, 295)
+        Me.ContForms.Size = New System.Drawing.Size(734, 421)
         Me.ContForms.TabIndex = 0
         '
         'TabPage1
@@ -281,7 +281,7 @@ Partial Class MenuPrincipal
         Me.TabPage1.Location = New System.Drawing.Point(4, 24)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(0)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(526, 267)
+        Me.TabPage1.Size = New System.Drawing.Size(726, 393)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Menu Principal"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -296,7 +296,7 @@ Partial Class MenuPrincipal
         Me.ContenidoMenuPrincipal.Location = New System.Drawing.Point(0, 0)
         Me.ContenidoMenuPrincipal.Margin = New System.Windows.Forms.Padding(0)
         Me.ContenidoMenuPrincipal.Name = "ContenidoMenuPrincipal"
-        Me.ContenidoMenuPrincipal.Size = New System.Drawing.Size(526, 267)
+        Me.ContenidoMenuPrincipal.Size = New System.Drawing.Size(726, 393)
         Me.ContenidoMenuPrincipal.TabIndex = 0
         '
         'DataGridView1
@@ -331,14 +331,14 @@ Partial Class MenuPrincipal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(536, 327)
+        Me.ClientSize = New System.Drawing.Size(736, 453)
         Me.ControlBox = False
         Me.Controls.Add(Me.Border)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.MinimumSize = New System.Drawing.Size(469, 285)
+        Me.MinimumSize = New System.Drawing.Size(736, 453)
         Me.Name = "MenuPrincipal"
         Me.Text = "DK - CODE"
         Me.Border.ResumeLayout(False)
