@@ -1,0 +1,257 @@
+﻿Imports System.Data.SqlClient
+
+Public Class Agregar1
+
+    'Función que muestra la tabla de libros con las columnas de interés en la pantalla que se carga
+    'Se puede modificar la instrucción y seleccionar nombre del libro con el estado o lo que te apetezca
+    'Acá puse monstrar toda la tabla
+    'Además actualiza cuando se hacen cambios en la tabla
+
+    'conexion kendrick
+    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Conexion dilan
+    'Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public procAdd As New SqlCommand()
+    Public procAddNew As New SqlCommand()
+
+    Public Sub MostrarLibros()
+        Dim consulta As String = "Select * From Books"
+        Dim ejecutar As New SqlCommand(consulta, conex)
+
+        Try
+            Dim tabla As New SqlDataAdapter(ejecutar)
+            Dim dss As New DataSet
+            tabla.Fill(dss, "Books")
+
+            Me.Data.DataSource = dss.Tables("Books")
+
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        Finally
+            conex.Close()
+        End Try
+
+    End Sub
+
+    Private Sub Agregar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Ocultar()
+        MostrarLibros()
+        procesar.Enabled = False
+
+    End Sub
+
+
+    'Procesar es para seleccionar que tipo de libro se va a introducir ... Nuevo autor o con autor existente.
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles procesar.Click
+        If opcionExiste.Checked = True And opcionNuevo.Checked = True Or
+            opcionExiste.Checked = False And opcionNuevo.Checked = False Then
+            MessageBox.Show("Selecciona una opción", "Error de selección", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            opcionExiste.Checked = False
+            opcionNuevo.Checked = False
+            procesar.Enabled = False
+        ElseIf opcionExiste.Checked = True Then
+
+            'Muestra los componentes para introducir los datos de nuevo libro con autor existente
+            MostrarExiste()
+            GroupBox1.Enabled = False
+
+            'de deshabilita la caja de seleccion para no poder echar para atras 
+
+            'Esta parte para abajo llena el combobox con los autores que existen en la base de datos
+
+            Dim mostrarAutores As String = "select Name from Authors"
+
+            Dim llenar As New SqlCommand(mostrarAutores, conex)
+
+            conex.Open()
+
+            Dim reader As SqlDataReader = llenar.ExecuteReader()
+
+            While reader.Read()
+                autoresExisCombo.Items.Add(reader("Name").ToString())
+            End While
+
+            reader.Close()
+
+            conex.Close()
+
+
+        ElseIf opcionNuevo.Checked = True Then
+
+            'Muestra los componentes para poder introducir un nuevo libro
+            MostrarNuevo()
+            GroupBox1.Enabled = False
+
+            'de deshabilita la caja de seleccion para no poder echar para atras 
+
+        End If
+    End Sub
+
+    'Funcion para ocultar los componentes de nuevo libro cuando se carga el form
+    Public Sub Ocultar()
+        inputLibro.Visible = False
+        inputNombre.Visible = False
+        autoresExisCombo.Visible = False
+        autorExistenteLb.Visible = False
+        tituloLibroLb.Visible = False
+        nombreAutorNew.Visible = False
+        inputCountry.Visible = False
+        residenciaAutorLb.Visible = False
+    End Sub
+
+    'Funcion para monstrar componentes para nuevo libro y autor
+    Public Sub MostrarNuevo()
+        inputLibro.Visible = True
+        inputNombre.Visible = True
+        autoresExisCombo.Visible = False
+        autorExistenteLb.Visible = False
+        tituloLibroLb.Visible = True
+        nombreAutorNew.Visible = True
+        inputCountry.Visible = True
+        residenciaAutorLb.Visible = True
+    End Sub
+
+
+    'Funcion para mostrar componentes para nuevo libro con autor existente
+    Public Sub MostrarExiste()
+        inputCountry.Visible = False
+        residenciaAutorLb.Visible = False
+        inputLibro.Visible = True
+        inputNombre.Visible = False
+        autoresExisCombo.Visible = True
+        autorExistenteLb.Visible = True
+        tituloLibroLb.Visible = True
+        nombreAutorNew.Visible = False
+    End Sub
+
+
+    'KeyPress para controlar ACSII para input a tabla
+    Private Sub InputNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles inputNombre.KeyPress
+        If Not Char.IsLetter(e.KeyChar) _
+                     AndAlso Not Char.IsControl(e.KeyChar) _
+                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+
+    'KeyPress para controlar ACSII para input a tabla
+    Private Sub InputLibro_KeyPress(sender As Object, e As KeyPressEventArgs) Handles inputLibro.KeyPress
+        If Not Char.IsLetter(e.KeyChar) _
+                     AndAlso Not Char.IsControl(e.KeyChar) _
+                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+
+    'Habilitar boton de procesar con una seleccion de checkbox
+    Private Sub OpcionExiste_CheckedChanged(sender As Object, e As EventArgs) Handles opcionExiste.CheckedChanged
+        If opcionExiste.Checked = False Then
+            procesar.Enabled = False
+        Else
+            procesar.Enabled = True
+        End If
+    End Sub
+
+
+    'Habilitar boton de procesar con una seleccion de checkbox
+    Private Sub OpcionNuevo_CheckedChanged(sender As Object, e As EventArgs) Handles opcionNuevo.CheckedChanged
+        If opcionNuevo.Checked = False Then
+            procesar.Enabled = False
+        Else
+            procesar.Enabled = True
+        End If
+    End Sub
+
+
+    'Boton de agrega datos a las tablas y hace los cambios
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles agregar.Click
+        If opcionExiste.Checked = True Then
+            If autoresExisCombo.SelectedItem = Nothing Then
+                MessageBox.Show("AUTOR INCORRECTO", "Error de selección", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                If inputLibro.Text = Nothing Then
+                    MessageBox.Show("INTRODUCE NOMBRE DEL LIBRO", "Error al agregar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Else
+
+                    'Procedimiento para agregar libro con procedimiento almacenado
+
+                    conex.Open()
+
+                    procAdd.Connection = conex
+
+                    procAdd.CommandType = CommandType.StoredProcedure
+
+                    procAdd.CommandText = "AddLibro"
+
+                    'Parámetros que necesita el procedimiento
+
+                    procAdd.Parameters.AddWithValue("@Id", Val(autoresExisCombo.SelectedIndex) + 1)
+                    procAdd.Parameters.AddWithValue("@Title", inputLibro.Text)
+                    procAdd.Parameters.AddWithValue("@estadoLibro", " ")
+
+                    'Ejecucion del procedimiento
+                    procAdd.ExecuteNonQuery()
+
+                    MessageBox.Show("NUEVO LIBRO AGREGADO", "COMPLETADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+                    conex.Close()
+
+                    MostrarLibros()
+                    'Cierra conexion y actualiza tablas
+
+                End If
+            End If
+
+        ElseIf opcionNuevo.Checked = True Then
+
+            If inputNombre.Text = Nothing Then
+                MessageBox.Show("COLOCA UN NOMBRE AL AUTOR", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            Else
+                If inputCountry.Text = Nothing Then
+                    MessageBox.Show("COLOCA PAÍS DEL AUTOR", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                Else
+                    If inputLibro.Text = Nothing Then
+                        MessageBox.Show("COLOCA UN NOMBRE AL LIBRO", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                    Else
+
+                        'Procedimiento para agregar libro con nuevo autor
+                        conex.Open()
+
+                        procAddNew.Connection = conex
+
+                        procAddNew.CommandType = CommandType.StoredProcedure
+
+                        procAddNew.CommandText = "AddLibroNewAutor"
+
+                        procAddNew.Parameters.AddWithValue("@Name", inputNombre.Text)
+
+                        procAddNew.Parameters.AddWithValue("@Country", inputCountry.Text)
+
+                        procAddNew.Parameters.AddWithValue("@Title", inputLibro.Text)
+
+                        'Ejecuta procedimiento
+                        procAddNew.ExecuteNonQuery()
+
+                        MessageBox.Show("NUEVO LIBRO Y AUTOR AGREGADOS", "COMPLETADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+                        conex.Close()
+
+                        MostrarLibros()
+
+                        'Cierra conexion y actualiza tablas
+                    End If
+
+                End If
+
+            End If
+
+        End If
+    End Sub
+
+End Class
