@@ -87,7 +87,7 @@ Partial Class MenuPrincipal
         '
         Me.MovForm.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.MovForm.ColumnCount = 5
-        Me.MovForm.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
+        Me.MovForm.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110.0!))
         Me.MovForm.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.MovForm.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.MovForm.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
@@ -177,11 +177,11 @@ Partial Class MenuPrincipal
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BibliotecaArchivosToolStripMenuItem, Me.OtrosToolStripMenuItem, Me.NosotrosToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(100, 0)
+        Me.MenuStrip1.Location = New System.Drawing.Point(110, 0)
         Me.MenuStrip1.MinimumSize = New System.Drawing.Size(0, 30)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(0)
-        Me.MenuStrip1.Size = New System.Drawing.Size(201, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(239, 30)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -189,11 +189,11 @@ Partial Class MenuPrincipal
         '
         Me.BibliotecaArchivosToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.BibliotecaArchivosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerLibrosToolStripMenuItem, Me.VerMenuToolStripMenuItem, Me.CerrarTodoToolStripMenuItem1})
-        Me.BibliotecaArchivosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BibliotecaArchivosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BibliotecaArchivosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.BibliotecaArchivosToolStripMenuItem.Name = "BibliotecaArchivosToolStripMenuItem"
         Me.BibliotecaArchivosToolStripMenuItem.Padding = New System.Windows.Forms.Padding(0)
-        Me.BibliotecaArchivosToolStripMenuItem.Size = New System.Drawing.Size(66, 30)
+        Me.BibliotecaArchivosToolStripMenuItem.Size = New System.Drawing.Size(80, 30)
         Me.BibliotecaArchivosToolStripMenuItem.Text = "Biblioteca"
         '
         'VerLibrosToolStripMenuItem
@@ -201,7 +201,7 @@ Partial Class MenuPrincipal
         Me.VerLibrosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.VerLibrosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.VerLibrosToolStripMenuItem.Name = "VerLibrosToolStripMenuItem"
-        Me.VerLibrosToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.VerLibrosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.VerLibrosToolStripMenuItem.Text = "Ver Libros"
         '
         'VerMenuToolStripMenuItem
@@ -210,7 +210,7 @@ Partial Class MenuPrincipal
         Me.VerMenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarLibroToolStripMenuItem, Me.EliminarLibrosToolStripMenuItem})
         Me.VerMenuToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.VerMenuToolStripMenuItem.Name = "VerMenuToolStripMenuItem"
-        Me.VerMenuToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.VerMenuToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.VerMenuToolStripMenuItem.Text = "Opciones"
         '
         'AgregarLibroToolStripMenuItem
@@ -218,7 +218,7 @@ Partial Class MenuPrincipal
         Me.AgregarLibroToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.AgregarLibroToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.AgregarLibroToolStripMenuItem.Name = "AgregarLibroToolStripMenuItem"
-        Me.AgregarLibroToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.AgregarLibroToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.AgregarLibroToolStripMenuItem.Text = "Agregar Libros"
         '
         'EliminarLibrosToolStripMenuItem
@@ -226,7 +226,7 @@ Partial Class MenuPrincipal
         Me.EliminarLibrosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.EliminarLibrosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.EliminarLibrosToolStripMenuItem.Name = "EliminarLibrosToolStripMenuItem"
-        Me.EliminarLibrosToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.EliminarLibrosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.EliminarLibrosToolStripMenuItem.Text = "Eliminar Libros"
         '
         'CerrarTodoToolStripMenuItem1
@@ -234,23 +234,23 @@ Partial Class MenuPrincipal
         Me.CerrarTodoToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CerrarTodoToolStripMenuItem1.ForeColor = System.Drawing.Color.White
         Me.CerrarTodoToolStripMenuItem1.Name = "CerrarTodoToolStripMenuItem1"
-        Me.CerrarTodoToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
+        Me.CerrarTodoToolStripMenuItem1.Size = New System.Drawing.Size(180, 24)
         Me.CerrarTodoToolStripMenuItem1.Text = "Cerrar Todo"
         '
         'OtrosToolStripMenuItem
         '
-        Me.OtrosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.OtrosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.OtrosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.OtrosToolStripMenuItem.Name = "OtrosToolStripMenuItem"
-        Me.OtrosToolStripMenuItem.Size = New System.Drawing.Size(64, 30)
+        Me.OtrosToolStripMenuItem.Size = New System.Drawing.Size(75, 30)
         Me.OtrosToolStripMenuItem.Text = "Soporte"
         '
         'NosotrosToolStripMenuItem
         '
-        Me.NosotrosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.NosotrosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.NosotrosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.NosotrosToolStripMenuItem.Name = "NosotrosToolStripMenuItem"
-        Me.NosotrosToolStripMenuItem.Size = New System.Drawing.Size(69, 30)
+        Me.NosotrosToolStripMenuItem.Size = New System.Drawing.Size(82, 30)
         Me.NosotrosToolStripMenuItem.Text = "Nosotros"
         '
         'Panel1
