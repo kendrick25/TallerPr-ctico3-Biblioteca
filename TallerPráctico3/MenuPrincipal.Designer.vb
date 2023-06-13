@@ -64,7 +64,7 @@ Partial Class MenuPrincipal
         Me.Border.Location = New System.Drawing.Point(0, 0)
         Me.Border.Margin = New System.Windows.Forms.Padding(0)
         Me.Border.Name = "Border"
-        Me.Border.Padding = New System.Windows.Forms.Padding(1)
+        Me.Border.Padding = New System.Windows.Forms.Padding(2)
         Me.Border.Size = New System.Drawing.Size(736, 453)
         Me.Border.TabIndex = 1
         '
@@ -75,12 +75,12 @@ Partial Class MenuPrincipal
         Me.TableLayoutPanel1.Controls.Add(Me.MovForm, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(1, 1)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(2, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(734, 451)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(732, 449)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'MovForm
@@ -103,7 +103,7 @@ Partial Class MenuPrincipal
         Me.MovForm.Name = "MovForm"
         Me.MovForm.RowCount = 1
         Me.MovForm.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.MovForm.Size = New System.Drawing.Size(734, 30)
+        Me.MovForm.Size = New System.Drawing.Size(732, 30)
         Me.MovForm.TabIndex = 0
         '
         'Label1
@@ -131,7 +131,7 @@ Partial Class MenuPrincipal
         Me.BtnMin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnMin.Location = New System.Drawing.Point(584, 0)
+        Me.BtnMin.Location = New System.Drawing.Point(582, 0)
         Me.BtnMin.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnMin.Name = "BtnMin"
         Me.BtnMin.Size = New System.Drawing.Size(50, 30)
@@ -148,7 +148,7 @@ Partial Class MenuPrincipal
         Me.BtnMax.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnMax.Location = New System.Drawing.Point(634, 0)
+        Me.BtnMax.Location = New System.Drawing.Point(632, 0)
         Me.BtnMax.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnMax.Name = "BtnMax"
         Me.BtnMax.Size = New System.Drawing.Size(50, 30)
@@ -165,7 +165,7 @@ Partial Class MenuPrincipal
         Me.BtnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnClose.Location = New System.Drawing.Point(684, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(682, 0)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(50, 30)
@@ -261,7 +261,7 @@ Partial Class MenuPrincipal
         Me.Panel1.Location = New System.Drawing.Point(0, 30)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(734, 421)
+        Me.Panel1.Size = New System.Drawing.Size(732, 419)
         Me.Panel1.TabIndex = 1
         '
         'ContForms
@@ -272,7 +272,7 @@ Partial Class MenuPrincipal
         Me.ContForms.Margin = New System.Windows.Forms.Padding(0)
         Me.ContForms.Name = "ContForms"
         Me.ContForms.SelectedIndex = 0
-        Me.ContForms.Size = New System.Drawing.Size(734, 421)
+        Me.ContForms.Size = New System.Drawing.Size(732, 419)
         Me.ContForms.TabIndex = 0
         '
         'TabPage1
@@ -281,7 +281,7 @@ Partial Class MenuPrincipal
         Me.TabPage1.Location = New System.Drawing.Point(4, 24)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(0)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(726, 393)
+        Me.TabPage1.Size = New System.Drawing.Size(724, 391)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Menu Principal"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -296,7 +296,7 @@ Partial Class MenuPrincipal
         Me.ContenidoMenuPrincipal.Location = New System.Drawing.Point(0, 0)
         Me.ContenidoMenuPrincipal.Margin = New System.Windows.Forms.Padding(0)
         Me.ContenidoMenuPrincipal.Name = "ContenidoMenuPrincipal"
-        Me.ContenidoMenuPrincipal.Size = New System.Drawing.Size(726, 393)
+        Me.ContenidoMenuPrincipal.Size = New System.Drawing.Size(724, 391)
         Me.ContenidoMenuPrincipal.TabIndex = 0
         '
         'DataGridView1
