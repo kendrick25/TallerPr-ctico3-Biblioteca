@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class Agregar1
+Public Class AgregarLibros1
 
     'Función que muestra la tabla de libros con las columnas de interés en la pantalla que se carga
     'Se puede modificar la instrucción y seleccionar nombre del libro con el estado o lo que te apetezca
@@ -11,8 +11,7 @@ Public Class Agregar1
     Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
     'Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
-    Public procAdd As New SqlCommand()
-    Public procAddNew As New SqlCommand()
+
 
     Public Sub MostrarLibros()
         Dim consulta As String = "Select * From Books"
@@ -179,7 +178,7 @@ Public Class Agregar1
                     'Procedimiento para agregar libro con procedimiento almacenado
 
                     conex.Open()
-
+                    Dim procAdd As New SqlCommand()
                     procAdd.Connection = conex
 
                     procAdd.CommandType = CommandType.StoredProcedure
@@ -222,7 +221,7 @@ Public Class Agregar1
 
                         'Procedimiento para agregar libro con nuevo autor
                         conex.Open()
-
+                        Dim procAddNew As New SqlCommand()
                         procAddNew.Connection = conex
 
                         procAddNew.CommandType = CommandType.StoredProcedure
@@ -254,4 +253,15 @@ Public Class Agregar1
         End If
     End Sub
 
+    Private Sub FinalizarForm_Click(sender As Object, e As EventArgs) Handles FinalizarForm.Click
+        Dim resultado As MsgBoxResult
+        resultado = CType(MessageBox.Show("¿Desea finalizar el Modo de Agregar Libros?", " Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question), MsgBoxResult)
+        If resultado = MsgBoxResult.No Then
+        Else
+            'borrar Pagina actual
+            Dim tab As TabPage = MenuPrincipal.ContForms.SelectedTab
+            MenuPrincipal.ContForms.TabPages.Remove(tab)
+            Me.Close()
+        End If
+    End Sub
 End Class

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Agregar1
+Partial Class AgregarLibros1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -44,6 +44,7 @@ Partial Class Agregar1
         Me.inputLibro = New System.Windows.Forms.TextBox()
         Me.tituloLibroLb = New System.Windows.Forms.Label()
         Me.autorExistenteLb = New System.Windows.Forms.Label()
+        Me.FinalizarForm = New System.Windows.Forms.Button()
         CType(Me.Data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -294,6 +295,15 @@ Partial Class Agregar1
         Me.autorExistenteLb.TabIndex = 8
         Me.autorExistenteLb.Text = "Autor: "
         '
+        'FinalizarForm
+        '
+        Me.FinalizarForm.Location = New System.Drawing.Point(697, 3)
+        Me.FinalizarForm.Name = "FinalizarForm"
+        Me.FinalizarForm.Size = New System.Drawing.Size(75, 23)
+        Me.FinalizarForm.TabIndex = 8
+        Me.FinalizarForm.Text = "Finalizar"
+        Me.FinalizarForm.UseVisualStyleBackColor = True
+        '
         'Agregar1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -301,6 +311,7 @@ Partial Class Agregar1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(784, 415)
         Me.ControlBox = False
+        Me.Controls.Add(Me.FinalizarForm)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.procesar)
         Me.Controls.Add(Me.GroupBox1)
@@ -342,4 +353,5 @@ Partial Class Agregar1
     Friend WithEvents agregar As Button
     Friend WithEvents inputCountry As TextBox
     Friend WithEvents residenciaAutorLb As Label
+    Friend WithEvents FinalizarForm As Button
 End Class
