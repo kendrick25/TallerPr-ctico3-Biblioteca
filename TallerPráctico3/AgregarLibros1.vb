@@ -8,10 +8,10 @@ Public Class AgregarLibros1
     'Además actualiza cuando se hacen cambios en la tabla
 
     'conexion kendrick
-    Private conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Private conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
 
     'Conexion dilan
-    'Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
 
 
     Public Sub MostrarLibros()
@@ -34,6 +34,7 @@ Public Class AgregarLibros1
     End Sub
 
     Private Sub Agregar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Ocultar()
         MostrarLibros()
         procesar.Enabled = False
@@ -192,7 +193,7 @@ Public Class AgregarLibros1
 
                     procAdd.Parameters.AddWithValue("@Id", Val(autoresExisCombo.SelectedIndex) + 1)
                     procAdd.Parameters.AddWithValue("@Title", inputLibro.Text)
-                    procAdd.Parameters.AddWithValue("@estadoLibro", " ")
+                    procAdd.Parameters.AddWithValue("@estadoLibro", "Libre")
 
                     'Ejecucion del procedimiento
                     procAdd.ExecuteNonQuery()
