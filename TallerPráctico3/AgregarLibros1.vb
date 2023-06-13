@@ -8,7 +8,8 @@ Public Class AgregarLibros1
     'Además actualiza cuando se hacen cambios en la tabla
 
     'conexion kendrick
-    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    Private conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+
     'Conexion dilan
     'Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
 
@@ -59,6 +60,7 @@ Public Class AgregarLibros1
             'Esta parte para abajo llena el combobox con los autores que existen en la base de datos
 
             Dim mostrarAutores As String = "select Name from Authors"
+            'Dim conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
 
             Dim llenar As New SqlCommand(mostrarAutores, conex)
 
@@ -176,6 +178,7 @@ Public Class AgregarLibros1
                 Else
 
                     'Procedimiento para agregar libro con procedimiento almacenado
+                    'Dim conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
 
                     conex.Open()
                     Dim procAdd As New SqlCommand()
@@ -220,6 +223,8 @@ Public Class AgregarLibros1
                     Else
 
                         'Procedimiento para agregar libro con nuevo autor
+                        'Dim conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+
                         conex.Open()
                         Dim procAddNew As New SqlCommand()
                         procAddNew.Connection = conex
