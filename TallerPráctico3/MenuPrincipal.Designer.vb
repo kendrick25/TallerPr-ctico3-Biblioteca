@@ -46,6 +46,7 @@ Partial Class MenuPrincipal
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BtnEliminarLibro = New System.Windows.Forms.Button()
         Me.AbrirForm1 = New System.Windows.Forms.Button()
+        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Border.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MovForm.SuspendLayout()
@@ -181,7 +182,7 @@ Partial Class MenuPrincipal
         Me.MenuStrip1.MinimumSize = New System.Drawing.Size(0, 30)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(0)
-        Me.MenuStrip1.Size = New System.Drawing.Size(239, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(359, 30)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -207,7 +208,7 @@ Partial Class MenuPrincipal
         'VerMenuToolStripMenuItem
         '
         Me.VerMenuToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.VerMenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarLibroToolStripMenuItem, Me.EliminarLibrosToolStripMenuItem})
+        Me.VerMenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.AgregarLibroToolStripMenuItem, Me.EliminarLibrosToolStripMenuItem})
         Me.VerMenuToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.VerMenuToolStripMenuItem.Name = "VerMenuToolStripMenuItem"
         Me.VerMenuToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
@@ -326,6 +327,14 @@ Partial Class MenuPrincipal
         Me.AbrirForm1.Text = "Agregar Libro"
         Me.AbrirForm1.UseVisualStyleBackColor = True
         '
+        'ClientesToolStripMenuItem
+        '
+        Me.ClientesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ClientesToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.ClientesToolStripMenuItem.Text = "Clientes"
+        '
         'MenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -379,4 +388,5 @@ Partial Class MenuPrincipal
     Friend WithEvents CerrarTodoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents BtnEliminarLibro As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
 End Class

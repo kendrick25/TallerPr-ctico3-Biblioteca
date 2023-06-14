@@ -242,6 +242,30 @@ Public Class MenuPrincipal
         mensaje.Show()
         ContForms.SelectedTab = newPage
     End Sub
+    'Abrir Lista de Clientes
+    Public Sub OpenProblema3()
+        Dim mensaje As New Clientes  'Nombre del Form
+        mensaje.MdiParent = Me
+        If ContForms.TabCount >= 1 Then
+            CerrarTodoToolStripMenuItem1.Visible = True
+        Else
+            If ContForms.TabCount = 0 Then
+                CerrarTodoToolStripMenuItem1.Visible = False
+            End If
+        End If
+        ' Si no hay nada abierto
+        ContForms.Visible = True
+        mensaje.Dock = DockStyle.Fill ' Hace que el formulario se ajuste al tamaño del TabPage
+        ' Agrega el formulario al primer TabPage
+        'borrar pagina
+        'titulo de pagina
+        Dim newPage As New TabPage("Clientes")
+        'mover tabb
+        newPage.Controls.Add(mensaje)
+        ContForms.TabPages.Add(newPage)
+        mensaje.Show()
+        ContForms.SelectedTab = newPage
+    End Sub
     'opcion de barra de menu
     'Agregar Libros
     Public Sub BusquedaRespuesta()
@@ -272,8 +296,6 @@ Public Class MenuPrincipal
     End Sub
     Private Sub AgregarLibroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarLibroToolStripMenuItem.Click
         BusquedaRespuesta()
-
-
     End Sub
     Private Sub AbrirForm1_Click(sender As Object, e As EventArgs) Handles AbrirForm1.Click
         BusquedaRespuesta()
@@ -312,5 +334,35 @@ Public Class MenuPrincipal
 
     Private Sub BtnEliminarLibro_Click(sender As Object, e As EventArgs) Handles BtnEliminarLibro.Click
         BusquedaRespuesta2()
+    End Sub
+    'Lista de clientes
+    Public Sub BusquedaRespuesta3()
+        Dim encontrado As Boolean = False
+        If ContForms.TabCount > 1 Then
+            For Each tp As TabPage In ContForms.TabPages
+                If tp.Text = "Agregar Libros" Then
+                    ' Respuesta de cerrado
+                    encontrado = True
+                    Dim resultado As MsgBoxResult
+                    resultado = CType(MessageBox.Show("¿Actualmente esta en uso el modo Agregar, desea finalizar?", " Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question), MsgBoxResult)
+                    If resultado = MsgBoxResult.No Then
+                        ContForms.SelectedTab = tp
+                    Else
+                        'cierras el form agregar libro
+                        ContForms.TabPages.Remove(tp)
+                        OpenProblema3()
+                    End If
+                    Exit For
+                End If
+            Next
+            If encontrado = False Then
+                OpenProblema3()
+            End If
+        Else
+            OpenProblema3()
+        End If
+    End Sub
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        BusquedaRespuesta3()
     End Sub
 End Class
