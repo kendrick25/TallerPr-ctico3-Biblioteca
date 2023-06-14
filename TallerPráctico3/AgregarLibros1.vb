@@ -180,8 +180,12 @@ Public Class AgregarLibros1
 
                     'Procedimiento para agregar libro con procedimiento almacenado
                     'Dim conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+                    Try
+                        conex.Open()
+                    Catch ex As Exception
+                        MsgBox(ex.Message.ToString)
+                    End Try
 
-                    conex.Open()
                     Dim procAdd As New SqlCommand()
                     procAdd.Connection = conex
 
@@ -191,18 +195,30 @@ Public Class AgregarLibros1
 
                     'Parámetros que necesita el procedimiento
 
-                    procAdd.Parameters.AddWithValue("@Id", Val(autoresExisCombo.SelectedIndex) + 1)
+                    procAdd.Parameters.AddWithValue("@Name", autoresExisCombo.SelectedItem)
                     procAdd.Parameters.AddWithValue("@Title", inputLibro.Text)
                     procAdd.Parameters.AddWithValue("@estadoLibro", "Libre")
 
                     'Ejecucion del procedimiento
-                    procAdd.ExecuteNonQuery()
 
-                    MessageBox.Show("NUEVO LIBRO AGREGADO", "COMPLETADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    Dim answer1 As Integer
+
+                    answer1 = MsgBox("¿DESEAS AGREGAR DEFINIVAMENTE ESTE LIBRO? ", vbYesNo)
+
+                    If answer1 = vbYes Then
+
+                        procAdd.ExecuteNonQuery()
+
+                        MessageBox.Show("NUEVO LIBRO AGREGADO", "COMPLETADO", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                        MostrarLibros()
+
+                    Else
+
+                    End If
 
                     conex.Close()
 
-                    MostrarLibros()
                     'Cierra conexion y actualiza tablas
 
                 End If
@@ -225,8 +241,12 @@ Public Class AgregarLibros1
 
                         'Procedimiento para agregar libro con nuevo autor
                         'Dim conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+                        Try
+                            conex.Open()
+                        Catch ex As Exception
+                            MsgBox(ex.Message.ToString)
+                        End Try
 
-                        conex.Open()
                         Dim procAddNew As New SqlCommand()
                         procAddNew.Connection = conex
 
@@ -241,13 +261,23 @@ Public Class AgregarLibros1
                         procAddNew.Parameters.AddWithValue("@Title", inputLibro.Text)
 
                         'Ejecuta procedimiento
-                        procAddNew.ExecuteNonQuery()
 
-                        MessageBox.Show("NUEVO LIBRO Y AUTOR AGREGADOS", "COMPLETADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        Dim answer2 As Integer
+
+                        answer2 = MsgBox("¿DESEAS AGREGAR ESTE AUTOR CON SU LIBRO? ", vbYesNo)
+
+                        If answer2 = vbYes Then
+                            procAddNew.ExecuteNonQuery()
+
+                            MessageBox.Show("NUEVO LIBRO Y AUTOR AGREGADOS", "COMPLETADO", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                            MostrarLibros()
+
+                        Else
+
+                        End If
 
                         conex.Close()
-
-                        MostrarLibros()
 
                         'Cierra conexion y actualiza tablas
                     End If
@@ -270,4 +300,5 @@ Public Class AgregarLibros1
             Me.Close()
         End If
     End Sub
+
 End Class
