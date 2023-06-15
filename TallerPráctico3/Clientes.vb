@@ -4,7 +4,7 @@ Public Class Clientes
     Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
     'Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
-
+    Const ValorMaxEnterosSQL As Double = 2147483648
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim resultado As MsgBoxResult
         resultado = CType(MessageBox.Show("¿Desea finalizar el Progreso actual de registro de Clientes?", " Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question), MsgBoxResult)
@@ -61,8 +61,8 @@ Public Class Clientes
             Dim maxVal As Integer = DataGridView1.Rows.Cast(Of DataGridViewRow)().Max(Function(row) Convert.ToInt32(row.Cells("idPrestamos").Value))
             'fecha de prestamo
             Dim fechaPrestamo As DateTime = DateTime.Now
-            Dim dias As Integer
-            Integer.TryParse(TxtPrestamo.Text, dias)
+            Dim dias As Double
+            Double.TryParse(TxtPrestamo.Text, dias)
             fechaPrestamo = fechaPrestamo.AddDays(dias)
             'precio
             Dim precio As Double
@@ -91,14 +91,13 @@ Public Class Clientes
             TxtPrestamo.Text = ""
             MostrarClientes()
             MostrarLibros()
-            ErrorOpcion.Visible = False
+
             ErrorName.Visible = False
             ErrorPrestamo.Visible = False
             ErrorLibro.Visible = False
         Else
             If OpcionAgregar.Checked = False And OpcionImprimir.Checked = False Then
-                ErrorOpcion.Visible = True
-                ErrorOpcion.Text = "Seleccione una opcion."
+
             End If
             If TextName.Text = "" Then
                 ErrorName.Visible = True
@@ -168,7 +167,7 @@ Public Class Clientes
         ErrorPrestamo.Visible = False
         ErrorLibro.Visible = False
         ErrorName.Visible = False
-        ErrorOpcion.Visible = False
+
         ErrorMorosidad.Visible = False
     End Sub
     Public Sub NoVisible()
@@ -197,8 +196,10 @@ Public Class Clientes
         ErrorPrestamo.Visible = False
         ErrorLibro.Visible = False
         ErrorName.Visible = False
-        ErrorOpcion.Visible = False
         ErrorMorosidad.Visible = False
+        'Resultados 
+        LabelDeudaPendiente.Visible = False
+        LabelPrecioPagarLibro.Visible = False
     End Sub
     Private Sub OpcionAgregar_click(sender As Object, e As EventArgs) Handles OpcionAgregar.Click
         LimpiarCampos()
@@ -319,33 +320,79 @@ Public Class Clientes
         End If
         conex.Close()
     End Sub
-
+    Private Sub TextName_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextName.KeyPress
+        If Not Char.IsLetter(e.KeyChar) And Not e.KeyChar = ChrW(Keys.Enter) And Not e.KeyChar = ChrW(Keys.Back) And Not e.KeyChar = " " And Not e.KeyChar = "/" Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub TextMorosidad_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextMorosidad.KeyPress, TxtPrestamo.KeyPress
+        If Char.IsLetter(e.KeyChar) And Not e.KeyChar = ChrW(Keys.Enter) And Not Char.IsDigit(e.KeyChar) And Not e.KeyChar = ChrW(Keys.Back) Then
+            e.Handled = True
+        End If
+    End Sub
     Private Sub TextName_TextChanged(sender As Object, e As EventArgs) Handles TextName.TextChanged
-        If TextName.Text = “” Then
+        Dim i As Integer
+        For i = 1 To Len(TextName.Text)
+            If Not IsNumeric(Mid(TextName.Text, i, 1)) Then
+                If Not Mid(TextName.Text, i, 1) Like "[A-Za-z]" Then
+                    Dim Borrar As String = TextName.Text.Remove(TextName.Text.Length - 1)
+                    TextName.Text = Borrar
+                    TextName.SelectionStart = TextName.Text.Length
+                    Exit Sub
+                End If
+            Else
+                Dim Borrar As String = TextName.Text.Remove(TextName.Text.Length - 1)
+                TextName.Text = Borrar
+                TextName.SelectionStart = TextName.Text.Length
+                Exit Sub
+            End If
+        Next i
+        If TextName.Text = “” Or IsNumeric(TextName.Text) Or TextName.Text.Length > 50 Then
             If TextName.Text = “” Then
                 ComboLibros.DataSource = Nothing
                 ComboLibros.Items.Clear()
                 MostrarClientes()
                 PagarTodo.Visible = False
+                ErrorName.Visible = True
+            End If
+            If TextName.Text.Length > 50 Or IsNumeric(TextName.Text) Then
+                Dim Borrar As String = TextName.Text.Remove(TextName.Text.Length - 1)
+                TextName.Text = Borrar
+                TextName.SelectionStart = TextName.Text.Length
             End If
         Else
+            ErrorName.Visible = False
             If OpcionImprimir.Checked = True Then
                 '-------------------------
                 DataGridView1.ClearSelection()
                 conex.Open()
+
                 Dim cmd As New SqlCommand("SELECT idPrestamos,nombreCl,LibroUso,fechaPrestamo,fechaDevol,deterioro,morosidad,precio FROM Cliente WHERE UPPER(nombreCl) LIKE UPPER(@myValue)", conex)
                 cmd.Parameters.AddWithValue("@myValue", "%" & TextName.Text & "%")
                 Dim tabla As New SqlDataAdapter(cmd)
+
                 Dim dss As New DataSet
                 tabla.Fill(dss, "Cliente")
                 Me.DataGridView1.DataSource = dss.Tables("Cliente")
                 conex.Close()
                 MostrarLibrosDelCliente()
+                Dim suma As Double
                 For Each row As DataGridViewRow In DataGridView1.Rows
                     If row.Cells("nombreCl").Value IsNot Nothing AndAlso row.Cells("nombreCl").Value.ToString().ToLower() = TextName.Text Or row.Cells("nombreCl").Value.ToString() = TextName.Text Then
                         PagarTodo.Visible = True
+                        row.Selected = True
+                        suma += Convert.ToDouble(row.Cells("precio").Value)
+                        PagarTodo.Text = "Pagar Todo"
+                        'Resultados 
+                        LabelDeudaPendiente.Visible = True
+                        LabelDeudaPendiente.Text = "Deuda Total : "
+                        LabelPrecioPagarLibro.Visible = True
+                        LabelPrecioPagarLibro.Text = suma.ToString("C")
                     Else
                         PagarTodo.Visible = False
+                        'Resultados 
+                        LabelDeudaPendiente.Visible = False
+                        LabelPrecioPagarLibro.Visible = False
                     End If
                 Next
                 '-----------------------
@@ -359,20 +406,33 @@ Public Class Clientes
             Dim encontrado As Boolean = False
             DataGridView1.Sort(DataGridView1.Columns(2), System.ComponentModel.ListSortDirection.Ascending)
             DataGridView1.ClearSelection()
+            Dim suma As Double
             For Each row As DataGridViewRow In DataGridView1.Rows
                 If row.Cells("nombreCl").Value IsNot Nothing AndAlso row.Cells("LibroUso").Value IsNot Nothing Then
                     If row.Cells("nombreCl").Value.ToString().ToLower() = TextName.Text Or row.Cells("nombreCl").Value.ToString() = TextName.Text Then
                         If row.Cells("LibroUso").Value.ToString().ToLower() = ComboLibros.Text Or row.Cells("LibroUso").Value.ToString() = ComboLibros.Text Then
                             encontrado = True
                             row.Selected = True
+                            suma += Convert.ToDouble(row.Cells("precio").Value)
                             'mostrar solo el buscado)
                             'btns
                             BtnAccion.Visible = True
+
+                            PagarTodo.Text = "Pagar"
+
+                            'Resultados 
+                            LabelDeudaPendiente.Visible = True
+                            LabelDeudaPendiente.Text = "Deuda: "
+                            LabelPrecioPagarLibro.Visible = True
+                            LabelPrecioPagarLibro.Text = suma.ToString("C")
                         End If
                     End If
                 End If
             Next
             If Not encontrado Then
+                'Resultados 
+                LabelDeudaPendiente.Visible = False
+                LabelPrecioPagarLibro.Visible = False
                 BtnAccion.Visible = False
                 DataGridView1.ClearSelection()
             End If
@@ -380,8 +440,96 @@ Public Class Clientes
         End If
     End Sub
     Private Sub PagarTodo_Click(sender As Object, e As EventArgs) Handles PagarTodo.Click
-        If OpcionImprimir.Checked = True And TextName.Text <> "" And ComboLibros.Text <> "" Then
-
+        If PagarTodo.Text = "Pagar" And OpcionImprimir.Checked = True And TextName.Text <> "" And ComboLibros.Text <> "" Then
+            'Procedimiento almacenado para agregar cliente el libro seleccionado del combo
+            conex.Open()
+            Dim procDelete As New SqlCommand()
+            procDelete.Connection = conex
+            procDelete.CommandType = CommandType.StoredProcedure
+            procDelete.CommandText = "EliminarLibroCliente"
+            procDelete.Parameters.AddWithValue("@nombreCl", TextName.Text)
+            procDelete.Parameters.AddWithValue("@Titlle", ComboLibros.Text)
+            procDelete.Parameters.AddWithValue("@estadoLibro", "Libre")
+            'Ejecutar procedimiento
+            procDelete.ExecuteNonQuery()
+            MessageBox.Show("Prestamo Pagado", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            conex.Close()
+            LimpiarCampos()
+        End If
+        If PagarTodo.Text = "Pagar Todo" And TextName.Text <> "" Then
+            For Each row As DataGridViewRow In DataGridView1.Rows
+                If row.Cells("nombreCl").Value IsNot Nothing AndAlso row.Cells("nombreCl").Value.ToString().ToLower() = TextName.Text Or row.Cells("nombreCl").Value.ToString() = TextName.Text Then
+                    Dim cad1 As String = row.Cells("nombreCl").Value.ToString()
+                    Dim cad2 As String = row.Cells("LibroUso").Value.ToString()
+                    'Procedimiento almacenado para agregar cliente el libro seleccionado del combo
+                    conex.Open()
+                    Dim procDelete As New SqlCommand()
+                    procDelete.Connection = conex
+                    procDelete.CommandType = CommandType.StoredProcedure
+                    procDelete.CommandText = "EliminarLibroCliente"
+                    procDelete.Parameters.AddWithValue("@nombreCl", cad1)
+                    procDelete.Parameters.AddWithValue("@Titlle", cad2)
+                    procDelete.Parameters.AddWithValue("@estadoLibro", "Libre")
+                    'Ejecutar procedimiento
+                    procDelete.ExecuteNonQuery()
+                    conex.Close()
+                End If
+            Next
+            LimpiarCampos()
+            MessageBox.Show("Prestamo Pagado", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
+    Private Sub TextMorosidad_TextChanged(sender As Object, e As EventArgs) Handles TextMorosidad.TextChanged
+        Dim i As Integer
+        For i = 1 To Len(TextMorosidad.Text)
+            If Not IsNumeric(Mid(TextMorosidad.Text, i, 1)) Then
+                Dim Borrar As String = TextMorosidad.Text.Remove(TextMorosidad.Text.Length - 1)
+                TextMorosidad.Text = Borrar
+                TextMorosidad.SelectionStart = TextMorosidad.Text.Length
+                Exit Sub
+            End If
+        Next i
+        Dim valor As Double
+        Double.TryParse(TextMorosidad.Text, valor)
+        If TextMorosidad.Text = “” Or valor >= ValorMaxEnterosSQL Or TextMorosidad.Text.Length > 10 Then
+            If TextMorosidad.Text = “” Then
+                ErrorMorosidad.Visible = True
+            End If
+            If valor >= ValorMaxEnterosSQL Or TextMorosidad.Text.Length > 9 Then
+                Dim Borrar As String = TextMorosidad.Text.Remove(TextMorosidad.Text.Length - 1)
+                TextMorosidad.Text = Borrar
+                TextMorosidad.SelectionStart = TextMorosidad.Text.Length
+            End If
+        Else
+            ErrorMorosidad.Visible = False
+        End If
+    End Sub
+
+    Private Sub TxtPrestamo_TextChanged(sender As Object, e As EventArgs) Handles TxtPrestamo.TextChanged
+        Dim i As Integer
+        For i = 1 To Len(TxtPrestamo.Text)
+            If Not IsNumeric(Mid(TxtPrestamo.Text, i, 1)) Then
+                Dim Borrar As String = TxtPrestamo.Text.Remove(TxtPrestamo.Text.Length - 1)
+                TxtPrestamo.Text = Borrar
+                TxtPrestamo.SelectionStart = TxtPrestamo.Text.Length
+                Exit Sub
+            End If
+        Next i
+        Dim valor As Double
+        Double.TryParse(TxtPrestamo.Text, valor)
+        If TxtPrestamo.Text = “” Or valor >= ValorMaxEnterosSQL Or TxtPrestamo.Text.Length > 9 Then
+            If TxtPrestamo.Text = “” Then
+                ErrorPrestamo.Visible = True
+            End If
+            If valor >= ValorMaxEnterosSQL Or TxtPrestamo.Text.Length > 10 Then
+                Dim Borrar As String = TxtPrestamo.Text.Remove(TxtPrestamo.Text.Length - 1)
+                TxtPrestamo.Text = Borrar
+                TxtPrestamo.SelectionStart = TxtPrestamo.Text.Length
+            End If
+        Else
+            ErrorPrestamo.Visible = False
+        End If
+    End Sub
+
 End Class
