@@ -1,6 +1,12 @@
 ﻿Imports System.Runtime.InteropServices
 Imports System.Drawing
+Imports System.Data.SqlClient
 Public Class MenuPrincipal
+    'conexion kendrick
+    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Conexion dilan
+    'Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+
     ' Variables para guardar la posición y el tamaño del formulario
     Dim mouseDownm As Boolean = False
     Dim mouseX As Integer = 0
@@ -158,13 +164,32 @@ Public Class MenuPrincipal
         End Property
     End Class
     '---------------------------------------LOAD-------------------------------------------
+    Public Sub MostrarLibros()
+        conex.Open()
+        Dim consulta As String = "select * from Books WHERE estadoLibro='Libre'"
+        Dim ejecutar As New SqlCommand(consulta, conex)
+        Try
+            Dim tabla As New SqlDataAdapter(ejecutar)
+            Dim dss As New DataSet
+            tabla.Fill(dss, "Books")
+            Me.DataGridView1.DataSource = dss.Tables("Books")
+
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        Finally
+            conex.Close()
+        End Try
+
+    End Sub
     Private Sub MenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'colores de menu
         CerrarTodoToolStripMenuItem1.Visible = False
         ContForms.Visible = False
         TableLayoutPanel1.Cursor = Cursors.Arrow
         MenuStrip1.Renderer = New renderer()
+        MostrarLibros()
     End Sub
+
     '------------------------------------------
     Private Sub BibliotecaArchivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BibliotecaArchivosToolStripMenuItem.Click
         If ContForms.Visible = True Then
@@ -364,5 +389,12 @@ Public Class MenuPrincipal
     End Sub
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
         BusquedaRespuesta3()
+    End Sub
+
+    Private Sub ContForms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ContForms.SelectedIndexChanged
+        If ContForms.SelectedTab.Text = "Menu Principal" Then
+            ' Llame a su función aquí
+            MostrarLibros()
+        End If
     End Sub
 End Class

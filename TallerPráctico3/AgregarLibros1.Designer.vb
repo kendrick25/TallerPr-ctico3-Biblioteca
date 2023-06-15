@@ -62,6 +62,9 @@ Partial Class AgregarLibros1
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.PaleTurquoise
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         Me.Data.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.Data.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Data.BackgroundColor = System.Drawing.SystemColors.HighlightText
         Me.Data.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -92,7 +95,7 @@ Partial Class AgregarLibros1
         Me.Data.RowHeadersWidth = 51
         Me.Data.RowTemplate.Height = 29
         Me.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Data.Size = New System.Drawing.Size(422, 265)
+        Me.Data.Size = New System.Drawing.Size(419, 331)
         Me.Data.TabIndex = 1
         '
         'Label1
@@ -304,10 +307,11 @@ Partial Class AgregarLibros1
         Me.FinalizarForm.Text = "Finalizar"
         Me.FinalizarForm.UseVisualStyleBackColor = True
         '
-        'Agregar1
+        'AgregarLibros1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(784, 415)
         Me.ControlBox = False
@@ -321,7 +325,7 @@ Partial Class AgregarLibros1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "Agregar1"
+        Me.Name = "AgregarLibros1"
         Me.ShowIcon = False
         Me.Text = "Agregar"
         CType(Me.Data, System.ComponentModel.ISupportInitialize).EndInit()
