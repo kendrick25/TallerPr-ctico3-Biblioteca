@@ -57,7 +57,11 @@ Public Class EliminarLibros1
         Dim mostrarSinAutores As String = "SELECT Name FROM Authors au LEFT JOIN BooksAuthors ba ON au.Id = ba.AuthorId WHERE ba.AuthorId IS NULL;"
         Dim llenar As New SqlCommand(mostrarSinAutores, conex)
 
-        conex.Open()
+        Try
+            conex.Open()
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
 
         Dim reader2 As SqlDataReader = llenar.ExecuteReader()
 
@@ -88,7 +92,11 @@ Public Class EliminarLibros1
         Dim mostrarToDelete As String = "Select Title from Books where estadoLibro = 'Libre'"
         Dim llenar As New SqlCommand(mostrarToDelete, conex)
 
-        conex.Open()
+        Try
+            conex.Open()
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
 
         Dim reader As SqlDataReader = llenar.ExecuteReader()
 
@@ -110,7 +118,12 @@ Public Class EliminarLibros1
         If comboToDelete.SelectedItem = Nothing Then
             MessageBox.Show("Selecciona una opción", "Error de selección", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            conex.Open()
+
+            Try
+                conex.Open()
+            Catch ex As Exception
+                MsgBox(ex.Message.ToString)
+            End Try
 
             Dim procDelete As New SqlCommand()
             'Procedimiento almacenado para eliminar el libro seleccionado del combo
@@ -124,14 +137,22 @@ Public Class EliminarLibros1
 
             'Ejecutar procedimiento
 
-            procDelete.ExecuteNonQuery()
+            Dim answer3 As Integer
 
-            MessageBox.Show("LIBRO ELIMINADO", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            answer3 = MsgBox("¿DESEAS ELIMINAR DEFINIVAMENTE ESTE LIBRO? ", vbYesNo)
 
+            If answer3 = vbYes Then
+
+                procDelete.ExecuteNonQuery()
+
+                MessageBox.Show("LIBRO ELIMINADO", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                MostrarLibros()
+            Else
+
+            End If
 
             conex.Close()
-
-            MostrarLibros()
 
             'cerrar conexion y actualizar tabla
         End If
@@ -148,7 +169,13 @@ Public Class EliminarLibros1
                 MessageBox.Show("SELECCION ERRÓNEA", "VERIFICA", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Else
-                conex.Open()
+
+                Try
+                    conex.Open()
+                Catch ex As Exception
+                    MsgBox(ex.Message.ToString)
+                End Try
+
                 Dim procDeleteAuto As New SqlCommand()
                 'Procedimiento que me elimina los autores sin libro
 
@@ -160,13 +187,23 @@ Public Class EliminarLibros1
 
                 procDeleteAuto.Parameters.AddWithValue("@Name", autoresSinLibro.SelectedItem)
 
-                procDeleteAuto.ExecuteNonQuery()
 
-                MessageBox.Show("AUTOR ELIMINADO", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Dim answer4 As Integer
+
+                answer4 = MsgBox("¿DESEAS ELIMINAR ESTE AUTOR SIN LIBROS? ", vbYesNo)
+
+                If answer4 = vbYes Then
+
+                    procDeleteAuto.ExecuteNonQuery()
+
+                    MessageBox.Show("AUTOR ELIMINADO", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    LibrosSinAutor()
+                Else
+
+                End If
 
                 conex.Close()
-
-                LibrosSinAutor()
 
                 'Cerrar conexion y actualizar combo
             End If
