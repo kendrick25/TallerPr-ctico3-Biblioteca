@@ -152,6 +152,7 @@ Public Class MenuPrincipal
             End Get
         End Property
         'Seleccion de menu
+
         Public Overrides ReadOnly Property MenuItemPressedGradientBegin As Color
             Get
                 Return Color.FromArgb(64, 64, 64) 'Elige el color que desees para el inicio del gradiente del submenú seleccionado
@@ -205,7 +206,7 @@ Public Class MenuPrincipal
     '------------------------------------------
     Private Sub BibliotecaArchivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BibliotecaArchivosToolStripMenuItem.Click
         'imagen de recursos
-        Panel1.Visible = False
+        Panel1.BackColor = Color.Silver
         Dim Img As Image = My.Resources.Logo_2023
         Panel1.BackgroundImage = Img
         Panel1.BackgroundImageLayout = ImageLayout.Zoom
@@ -217,6 +218,7 @@ Public Class MenuPrincipal
         Label4.Visible = False
         Label5.Visible = False
         Label6.Visible = False
+        Panel1.Visible = True
         If ContForms.Visible = True Then
             VerLibrosToolStripMenuItem.Text = "Ocultar Menu"
 
@@ -233,8 +235,35 @@ Public Class MenuPrincipal
     Private Sub VerLibrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerLibrosToolStripMenuItem.Click
         If ContForms.Visible = False Then
             ContForms.Visible = True
+            'imagen de recursos
+            Panel1.BackColor = Color.Black
+
+            Panel1.BackgroundImage = Nothing
+            'nosotros visible
+            PictureBox1.Visible = False
+            PictureBox2.Visible = False
+            PictureBox3.Visible = False
+            Label3.Visible = False
+            Label4.Visible = False
+            Label5.Visible = False
+            Label6.Visible = False
+            Panel1.Visible = True
         Else
             ContForms.Visible = False
+            'imagen de recursos
+            Panel1.BackColor = Color.Silver
+            Dim Img As Image = My.Resources.Logo_2023
+            Panel1.BackgroundImage = Img
+            Panel1.BackgroundImageLayout = ImageLayout.Zoom
+            'nosotros visible
+            PictureBox1.Visible = False
+            PictureBox2.Visible = False
+            PictureBox3.Visible = False
+            Label3.Visible = False
+            Label4.Visible = False
+            Label5.Visible = False
+            Label6.Visible = False
+            Panel1.Visible = True
         End If
     End Sub
     Private Sub CerrarTodoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CerrarTodoToolStripMenuItem1.Click
@@ -249,6 +278,20 @@ Public Class MenuPrincipal
             newPage.Controls.Add(ContenidoMenuPrincipal)
             ContForms.TabPages.Add(newPage)
             ContForms.Visible = True
+            'imagen de recursos
+            Panel1.BackColor = Color.Silver
+            Dim Img As Image = My.Resources.Logo_2023
+            Panel1.BackgroundImage = Img
+            Panel1.BackgroundImageLayout = ImageLayout.Zoom
+            'nosotros visible
+            PictureBox1.Visible = False
+            PictureBox2.Visible = False
+            PictureBox3.Visible = False
+            Label3.Visible = False
+            Label4.Visible = False
+            Label5.Visible = False
+            Label6.Visible = False
+            Panel1.Visible = True
         End If
     End Sub
     'opens de Problema 1
@@ -270,9 +313,19 @@ Public Class MenuPrincipal
         'mover tabb
         newPage.Controls.Add(mensaje)
         ContForms.TabPages.Add(newPage)
-
         mensaje.Show()
         ContForms.SelectedTab = newPage
+        'nosotros visible
+        PictureBox1.Visible = False
+        PictureBox2.Visible = False
+        PictureBox3.Visible = False
+        Label3.Visible = False
+        Label4.Visible = False
+        Label5.Visible = False
+        Label6.Visible = False
+        Panel1.Visible = True
+        Panel1.BackgroundImage = Nothing
+        Panel1.BackColor = Color.Black
     End Sub
     'open 2 eliminar libros
     Public Sub OpenProblema2()
@@ -296,6 +349,17 @@ Public Class MenuPrincipal
         ContForms.TabPages.Add(newPage)
         mensaje.Show()
         ContForms.SelectedTab = newPage
+        'nosotros visible
+        PictureBox1.Visible = False
+        PictureBox2.Visible = False
+        PictureBox3.Visible = False
+        Label3.Visible = False
+        Label4.Visible = False
+        Label5.Visible = False
+        Label6.Visible = False
+        Panel1.Visible = True
+        Panel1.BackgroundImage = Nothing
+        Panel1.BackColor = Color.Black
     End Sub
     'Abrir Lista de Clientes
     Public Sub OpenProblema3()
@@ -321,8 +385,19 @@ Public Class MenuPrincipal
         ContForms.TabPages.Add(newPage)
 
         mensaje.Show()
-        ContForms.SelectedTab = newPage
 
+        ContForms.SelectedTab = newPage
+        'nosotros visible
+        PictureBox1.Visible = False
+        PictureBox2.Visible = False
+        PictureBox3.Visible = False
+        Label3.Visible = False
+        Label4.Visible = False
+        Label5.Visible = False
+        Label6.Visible = False
+        Panel1.Visible = True
+        Panel1.BackgroundImage = Nothing
+        Panel1.BackColor = Color.Black
     End Sub
     'opcion de barra de menu
     'Agregar Libros
@@ -435,6 +510,8 @@ Public Class MenuPrincipal
 
     Private Sub NosotrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NosotrosToolStripMenuItem.Click
         'nosotros visible
+        Panel1.BackgroundImage = Nothing
+        Panel1.BackColor = Color.MediumBlue
         PictureBox1.Visible = True
         PictureBox2.Visible = True
         PictureBox3.Visible = True
@@ -443,6 +520,5 @@ Public Class MenuPrincipal
         Label5.Visible = True
         Label6.Visible = True
         ContForms.Visible = False
-        Panel1.BackgroundImage = Nothing
     End Sub
 End Class
