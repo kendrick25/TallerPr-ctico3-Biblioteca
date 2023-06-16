@@ -128,9 +128,8 @@ Public Class AgregarLibros1
 
     'KeyPress para controlar ACSII para input a tabla
     Private Sub InputNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles inputNombre.KeyPress
-        If Not Char.IsLetter(e.KeyChar) _
-                     AndAlso Not Char.IsControl(e.KeyChar) _
-                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+        Dim allowedChars As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 " ' Agrega los caracteres permitidos aquí
+        If Not allowedChars.Contains(e.KeyChar) AndAlso e.KeyChar <> ChrW(Keys.Back) Then
             e.Handled = True
         End If
     End Sub
@@ -138,9 +137,8 @@ Public Class AgregarLibros1
 
     'KeyPress para controlar ACSII para input a tabla
     Private Sub InputLibro_KeyPress(sender As Object, e As KeyPressEventArgs) Handles inputLibro.KeyPress
-        If Not Char.IsLetter(e.KeyChar) _
-                     AndAlso Not Char.IsControl(e.KeyChar) _
-                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+        Dim allowedChars As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 " ' Agrega los caracteres permitidos aquí
+        If Not allowedChars.Contains(e.KeyChar) AndAlso e.KeyChar <> ChrW(Keys.Back) Then
             e.Handled = True
         End If
     End Sub
@@ -212,6 +210,10 @@ Public Class AgregarLibros1
 
                         MostrarLibros()
 
+                        GroupBox2.Enabled = False
+
+                        registradoClear()
+
                     Else
 
                     End If
@@ -270,8 +272,11 @@ Public Class AgregarLibros1
 
                             MessageBox.Show("NUEVO LIBRO Y AUTOR AGREGADOS", "COMPLETADO", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+                            GroupBox2.Enabled = False
+
                             MostrarLibros()
 
+                            registradoClear()
                         Else
 
                         End If
@@ -299,5 +304,25 @@ Public Class AgregarLibros1
             Me.Close()
         End If
     End Sub
+
+    Private Sub inputCountry_KeyPress(sender As Object, e As KeyPressEventArgs) Handles inputCountry.KeyPress
+        Dim allowedChars As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 " ' Agrega los caracteres permitidos aquí
+        If Not allowedChars.Contains(e.KeyChar) AndAlso e.KeyChar <> ChrW(Keys.Back) Then
+            e.Handled = True
+        End If
+    End Sub
+
+
+    Public Sub registradoClear()
+        autoresExisCombo.SelectedIndex = -1
+        inputNombre.Clear()
+        inputCountry.Clear()
+        inputLibro.Clear()
+        opcionExiste.Checked = False
+        opcionNuevo.Checked = False
+        GroupBox2.Enabled = True
+        GroupBox1.Enabled = True
+    End Sub
+
 
 End Class
