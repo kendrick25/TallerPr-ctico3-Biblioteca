@@ -63,7 +63,7 @@ Public Class Clientes
             Dim fechaPrestamo As DateTime = DateTime.Now
             Dim dias As Double
             Double.TryParse(TxtPrestamo.Text, dias)
-            fechaPrestamo = fechaPrestamo.AddDays(dias)
+            fechaPrestamo = DateAdd("d", dias, fechaPrestamo)
             'precio
             Dim precio As Double
             precio = dias * 0.5
@@ -347,8 +347,8 @@ Public Class Clientes
                 Exit Sub
             End If
         Next i
-        If TextName.Text = “” Or IsNumeric(TextName.Text) Or TextName.Text.Length > 50 Then
-            If TextName.Text = “” Then
+        If TextName.Text = “” Or IsNumeric(TextName.Text) Or TextName.Text.Length > 50 Or TextName.Text = "" Then
+            If TextName.Text = “” Or TextName.Text = "" Then
                 ComboLibros.DataSource = Nothing
                 ComboLibros.Items.Clear()
                 MostrarClientes()
@@ -492,7 +492,7 @@ Public Class Clientes
         Next i
         Dim valor As Double
         Double.TryParse(TextMorosidad.Text, valor)
-        If TextMorosidad.Text = “” Or valor >= ValorMaxEnterosSQL Or TextMorosidad.Text.Length > 10 Then
+        If TextMorosidad.Text = “” Or Not valor > 0 Or valor >= ValorMaxEnterosSQL Or TextMorosidad.Text.Length > 10 Or TextMorosidad.Text = Nothing Then
             If TextMorosidad.Text = “” Then
                 ErrorMorosidad.Visible = True
             End If
@@ -501,12 +501,16 @@ Public Class Clientes
                 TextMorosidad.Text = Borrar
                 TextMorosidad.SelectionStart = TextMorosidad.Text.Length
             End If
+            If TextMorosidad.Text = Nothing Or Not valor > 0 Then
+                TextMorosidad.Text = ""
+            End If
         Else
             ErrorMorosidad.Visible = False
         End If
     End Sub
 
     Private Sub TxtPrestamo_TextChanged(sender As Object, e As EventArgs) Handles TxtPrestamo.TextChanged
+
         Dim i As Integer
         For i = 1 To Len(TxtPrestamo.Text)
             If Not IsNumeric(Mid(TxtPrestamo.Text, i, 1)) Then
@@ -518,14 +522,17 @@ Public Class Clientes
         Next i
         Dim valor As Double
         Double.TryParse(TxtPrestamo.Text, valor)
-        If TxtPrestamo.Text = “” Or valor >= ValorMaxEnterosSQL Or TxtPrestamo.Text.Length > 9 Then
+        If TxtPrestamo.Text = “” Or Not valor > 0 Or valor > 1000000 Or valor >= ValorMaxEnterosSQL Or TxtPrestamo.Text.Length > 9 Or TxtPrestamo.Text = Nothing Then
             If TxtPrestamo.Text = “” Then
                 ErrorPrestamo.Visible = True
             End If
-            If valor >= ValorMaxEnterosSQL Or TxtPrestamo.Text.Length > 10 Then
+            If valor >= ValorMaxEnterosSQL Or TxtPrestamo.Text.Length > 10 Or valor > 1000000 Then
                 Dim Borrar As String = TxtPrestamo.Text.Remove(TxtPrestamo.Text.Length - 1)
                 TxtPrestamo.Text = Borrar
                 TxtPrestamo.SelectionStart = TxtPrestamo.Text.Length
+            End If
+            If TxtPrestamo.Text = Nothing Or Not valor > 0 Then
+                TxtPrestamo.Text = ""
             End If
         Else
             ErrorPrestamo.Visible = False
