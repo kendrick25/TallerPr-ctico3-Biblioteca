@@ -14,9 +14,10 @@ Public Class EliminarLibros1
             Dim tabla As New SqlDataAdapter(ejecutar)
             Dim dss As New DataSet
             tabla.Fill(dss, "Books")
-
             Me.Data2.DataSource = dss.Tables("Books")
 
+            Data2.Columns("Title").HeaderText = "Título del Libro"
+            Data2.Columns("estadoLibro").HeaderText = "Estado del Libro"
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         Finally
@@ -40,6 +41,8 @@ Public Class EliminarLibros1
             tabla.Fill(dss, "Books")
 
             Me.data3.DataSource = dss.Tables("Books")
+            data3.Columns("Title").HeaderText = "Título del Libro"
+            data3.Columns("estadoLibro").HeaderText = "Estado del Libro"
 
         Catch ex As Exception
             Console.WriteLine(ex.Message)

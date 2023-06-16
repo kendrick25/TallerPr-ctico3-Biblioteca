@@ -87,7 +87,7 @@ Partial Class AgregarLibros1
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Data.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Data.Location = New System.Drawing.Point(344, 70)
+        Me.Data.Location = New System.Drawing.Point(349, 70)
         Me.Data.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Data.Name = "Data"
         Me.Data.ReadOnly = True
@@ -95,14 +95,14 @@ Partial Class AgregarLibros1
         Me.Data.RowHeadersWidth = 51
         Me.Data.RowTemplate.Height = 29
         Me.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Data.Size = New System.Drawing.Size(380, 276)
+        Me.Data.Size = New System.Drawing.Size(318, 264)
         Me.Data.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(485, 48)
+        Me.Label1.Location = New System.Drawing.Point(466, 48)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 20)
         Me.Label1.TabIndex = 2
@@ -300,6 +300,7 @@ Partial Class AgregarLibros1
         '
         'FinalizarForm
         '
+        Me.FinalizarForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.FinalizarForm.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.FinalizarForm.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.FinalizarForm.Location = New System.Drawing.Point(679, 10)

@@ -24,7 +24,10 @@ Public Class AgregarLibros1
             tabla.Fill(dss, "Books")
 
             Me.Data.DataSource = dss.Tables("Books")
+            Data.Columns("IdLibro").HeaderText = "ID"
 
+            Data.Columns("Title").HeaderText = "Título del Libro"
+            Data.Columns("estadoLibro").HeaderText = "Estado del Libro"
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         Finally
@@ -60,8 +63,6 @@ Public Class AgregarLibros1
             'Esta parte para abajo llena el combobox con los autores que existen en la base de datos
 
             Dim mostrarAutores As String = "select Name from Authors"
-            'Dim conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
-
             Dim llenar As New SqlCommand(mostrarAutores, conex)
 
             conex.Open()
@@ -176,7 +177,6 @@ Public Class AgregarLibros1
                 Else
 
                     'Procedimiento para agregar libro con procedimiento almacenado
-                    'Dim conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
                     Try
                         conex.Open()
                     Catch ex As Exception
@@ -241,7 +241,6 @@ Public Class AgregarLibros1
                     Else
 
                         'Procedimiento para agregar libro con nuevo autor
-                        'Dim conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
                         Try
                             conex.Open()
                         Catch ex As Exception

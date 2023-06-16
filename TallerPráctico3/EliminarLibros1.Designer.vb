@@ -59,8 +59,7 @@ Partial Class EliminarLibros1
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         Me.Data2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.Data2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Data2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Data2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Data2.BackgroundColor = System.Drawing.SystemColors.HighlightText
@@ -84,7 +83,7 @@ Partial Class EliminarLibros1
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Data2.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Data2.Location = New System.Drawing.Point(329, 46)
+        Me.Data2.Location = New System.Drawing.Point(297, 46)
         Me.Data2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Data2.Name = "Data2"
         Me.Data2.ReadOnly = True
@@ -92,7 +91,7 @@ Partial Class EliminarLibros1
         Me.Data2.RowHeadersWidth = 51
         Me.Data2.RowTemplate.Height = 29
         Me.Data2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Data2.Size = New System.Drawing.Size(443, 209)
+        Me.Data2.Size = New System.Drawing.Size(290, 223)
         Me.Data2.TabIndex = 2
         '
         'GroupBox1
@@ -143,9 +142,13 @@ Partial Class EliminarLibros1
         '
         'Label2
         '
+        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(484, 25)
+        Me.Label2.Location = New System.Drawing.Point(354, 15)
+        Me.Label2.MaximumSize = New System.Drawing.Size(174, 19)
+        Me.Label2.MinimumSize = New System.Drawing.Size(174, 19)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(174, 19)
         Me.Label2.TabIndex = 4
@@ -188,7 +191,7 @@ Partial Class EliminarLibros1
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.data3.DefaultCellStyle = DataGridViewCellStyle6
-        Me.data3.Location = New System.Drawing.Point(329, 292)
+        Me.data3.Location = New System.Drawing.Point(297, 292)
         Me.data3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.data3.Name = "data3"
         Me.data3.ReadOnly = True
@@ -196,14 +199,18 @@ Partial Class EliminarLibros1
         Me.data3.RowHeadersWidth = 51
         Me.data3.RowTemplate.Height = 29
         Me.data3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.data3.Size = New System.Drawing.Size(443, 112)
+        Me.data3.Size = New System.Drawing.Size(290, 173)
         Me.data3.TabIndex = 5
         '
         'Label3
         '
+        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(484, 271)
+        Me.Label3.Location = New System.Drawing.Point(335, 270)
+        Me.Label3.MaximumSize = New System.Drawing.Size(164, 19)
+        Me.Label3.MinimumSize = New System.Drawing.Size(164, 19)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(164, 19)
         Me.Label3.TabIndex = 6
@@ -259,9 +266,10 @@ Partial Class EliminarLibros1
         '
         'BtnFinalizarEliminar
         '
+        Me.BtnFinalizarEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnFinalizarEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.BtnFinalizarEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.BtnFinalizarEliminar.Location = New System.Drawing.Point(681, 10)
+        Me.BtnFinalizarEliminar.Location = New System.Drawing.Point(534, 2)
         Me.BtnFinalizarEliminar.Name = "BtnFinalizarEliminar"
         Me.BtnFinalizarEliminar.Size = New System.Drawing.Size(93, 32)
         Me.BtnFinalizarEliminar.TabIndex = 9
@@ -272,9 +280,10 @@ Partial Class EliminarLibros1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackgroundImage = Global.TallerPráctico3.My.Resources.Resources.pexels_codioful__formerly_gradienta__7130498
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(784, 415)
+        Me.ClientSize = New System.Drawing.Size(721, 476)
         Me.ControlBox = False
         Me.Controls.Add(Me.BtnFinalizarEliminar)
         Me.Controls.Add(Me.Label4)
