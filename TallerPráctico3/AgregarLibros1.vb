@@ -8,10 +8,10 @@ Public Class AgregarLibros1
     'Además actualiza cuando se hacen cambios en la tabla
 
     'conexion kendrick
-    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
 
     'Conexion dilan
-    'Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
 
 
     Public Sub MostrarLibros()
@@ -34,7 +34,6 @@ Public Class AgregarLibros1
     End Sub
 
     Private Sub Agregar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Ocultar()
         MostrarLibros()
         procesar.Enabled = False
