@@ -315,6 +315,8 @@ Public Class MenuPrincipal
         ContForms.TabPages.Add(newPage)
         mensaje.Show()
         ContForms.SelectedTab = newPage
+
+
         'nosotros visible
         PictureBox1.Visible = False
         PictureBox2.Visible = False
