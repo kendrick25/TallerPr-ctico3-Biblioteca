@@ -3,9 +3,9 @@ Imports System.Drawing
 Imports System.Data.SqlClient
 Public Class MenuPrincipal
     'conexion kendrick
-    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
-    Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
 
     ' Variables para guardar la posición y el tamaño del formulario
     Dim mouseDownm As Boolean = False
@@ -194,8 +194,15 @@ Public Class MenuPrincipal
     Private Sub BibliotecaArchivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BibliotecaArchivosToolStripMenuItem.Click
         If ContForms.Visible = True Then
             VerLibrosToolStripMenuItem.Text = "Ocultar Menu"
+
         Else
             VerLibrosToolStripMenuItem.Text = "Ver Libros"
+        End If
+        If ContForms.TabCount > 1 Then
+            CerrarTodoToolStripMenuItem1.Visible = True
+        End If
+        If ContForms.TabCount = 1 Then
+            CerrarTodoToolStripMenuItem1.Visible = False
         End If
     End Sub
     Private Sub VerLibrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerLibrosToolStripMenuItem.Click
@@ -225,10 +232,9 @@ Public Class MenuPrincipal
         mensaje.MdiParent = Me
         If ContForms.TabCount >= 1 Then
             CerrarTodoToolStripMenuItem1.Visible = True
-        Else
-            If ContForms.TabCount = 0 Then
-                CerrarTodoToolStripMenuItem1.Visible = False
-            End If
+        End If
+        If ContForms.TabCount = 0 Then
+            CerrarTodoToolStripMenuItem1.Visible = False
         End If
         ' Si no hay nada abierto
         ContForms.Visible = True
@@ -249,10 +255,9 @@ Public Class MenuPrincipal
         mensaje.MdiParent = Me
         If ContForms.TabCount >= 1 Then
             CerrarTodoToolStripMenuItem1.Visible = True
-        Else
-            If ContForms.TabCount = 0 Then
-                CerrarTodoToolStripMenuItem1.Visible = False
-            End If
+        End If
+        If ContForms.TabCount = 0 Then
+            CerrarTodoToolStripMenuItem1.Visible = False
         End If
         ' Si no hay nada abierto
         ContForms.Visible = True
@@ -273,10 +278,9 @@ Public Class MenuPrincipal
         mensaje.MdiParent = Me
         If ContForms.TabCount >= 1 Then
             CerrarTodoToolStripMenuItem1.Visible = True
-        Else
-            If ContForms.TabCount = 0 Then
-                CerrarTodoToolStripMenuItem1.Visible = False
-            End If
+        End If
+        If ContForms.TabCount = 0 Then
+            CerrarTodoToolStripMenuItem1.Visible = False
         End If
         ' Si no hay nada abierto
         ContForms.Visible = True
@@ -365,7 +369,7 @@ Public Class MenuPrincipal
         Dim encontrado As Boolean = False
         If ContForms.TabCount > 1 Then
             For Each tp As TabPage In ContForms.TabPages
-                If tp.Text = "Agregar Libros" Then
+                If tp.Text = "Clientes" Then
                     ' Respuesta de cerrado
                     encontrado = True
                     Dim resultado As MsgBoxResult
@@ -392,9 +396,11 @@ Public Class MenuPrincipal
     End Sub
 
     Private Sub ContForms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ContForms.SelectedIndexChanged
-        If ContForms.SelectedTab.Text = "Menu Principal" Then
-            ' Llame a su función aquí
-            MostrarLibros()
+        If ContForms.TabCount >= 1 Then
+            If ContForms.SelectedTab.Text = "Menu Principal" Then
+                ' Llame a su función aquí
+                MostrarLibros()
+            End If
         End If
     End Sub
 End Class

@@ -1,9 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Public Class Clientes
     'conexion kendrick
-    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
-    Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
     Const ValorMaxEnterosSQL As Double = 2147483648
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim resultado As MsgBoxResult
@@ -58,7 +58,16 @@ Public Class Clientes
         If OpcionAgregar.Checked = True And TextName.Text <> "" And TxtPrestamo.Text <> "" And ComboLibros.Text <> "" Then
             'calculo de valores
             'valor max id
-            Dim maxVal As Integer = DataGridView1.Rows.Cast(Of DataGridViewRow)().Max(Function(row) Convert.ToInt32(row.Cells("idPrestamos").Value))
+            Dim valmax As Integer
+            conex.Open()
+            Dim nuevoValor As Integer
+            Dim command As New SqlCommand("SELECT ISNULL(MAX(idPrestamos), 0) + 1 AS NuevoValor FROM Cliente", conex)
+            Dim reader As SqlDataReader = command.ExecuteReader()
+            If reader.Read() Then
+                nuevoValor = reader.GetInt32(0)
+            End If
+            reader.Close()
+            conex.Close()
             'fecha de prestamo
             Dim fechaPrestamo As DateTime = DateTime.Now
             Dim dias As Double
@@ -73,7 +82,7 @@ Public Class Clientes
             procDelete.Connection = conex
             procDelete.CommandType = CommandType.StoredProcedure
             procDelete.CommandText = "AddClientes1"
-            procDelete.Parameters.AddWithValue("@idPrestamos", maxVal + 1)
+            procDelete.Parameters.AddWithValue("@idPrestamos", nuevoValor)
             procDelete.Parameters.AddWithValue("@nombreCl", TextName.Text)
             procDelete.Parameters.AddWithValue("@LibroUSO", ComboLibros.Text)
             procDelete.Parameters.AddWithValue("@fechaPrestamo", DateTime.Now)
@@ -331,10 +340,11 @@ Public Class Clientes
         End If
     End Sub
     Private Sub TextName_TextChanged(sender As Object, e As EventArgs) Handles TextName.TextChanged
+
         Dim i As Integer
         For i = 1 To Len(TextName.Text)
             If Not IsNumeric(Mid(TextName.Text, i, 1)) Then
-                If Not Mid(TextName.Text, i, 1) Like "[A-Za-z]" Then
+                If Not Mid(TextName.Text, i, 1) Like "[A-Ñ-Z0-9 a-ñ-z]" Then
                     Dim Borrar As String = TextName.Text.Remove(TextName.Text.Length - 1)
                     TextName.Text = Borrar
                     TextName.SelectionStart = TextName.Text.Length
