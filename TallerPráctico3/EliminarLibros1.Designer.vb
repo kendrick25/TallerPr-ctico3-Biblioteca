@@ -84,14 +84,15 @@ Partial Class EliminarLibros1
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Data2.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Data2.Location = New System.Drawing.Point(376, 62)
+        Me.Data2.Location = New System.Drawing.Point(329, 46)
+        Me.Data2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Data2.Name = "Data2"
         Me.Data2.ReadOnly = True
         Me.Data2.RowHeadersVisible = False
         Me.Data2.RowHeadersWidth = 51
         Me.Data2.RowTemplate.Height = 29
         Me.Data2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Data2.Size = New System.Drawing.Size(475, 279)
+        Me.Data2.Size = New System.Drawing.Size(443, 209)
         Me.Data2.TabIndex = 2
         '
         'GroupBox1
@@ -101,9 +102,11 @@ Partial Class EliminarLibros1
         Me.GroupBox1.Controls.Add(Me.comboToDelete)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox1.Location = New System.Drawing.Point(11, 53)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 40)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(306, 197)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(268, 148)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Eliminar Ejemplar"
@@ -112,9 +115,10 @@ Partial Class EliminarLibros1
         '
         Me.borrarLibro.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.borrarLibro.Font = New System.Drawing.Font("Segoe UI Semibold", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.borrarLibro.Location = New System.Drawing.Point(96, 125)
+        Me.borrarLibro.Location = New System.Drawing.Point(84, 94)
+        Me.borrarLibro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.borrarLibro.Name = "borrarLibro"
-        Me.borrarLibro.Size = New System.Drawing.Size(107, 45)
+        Me.borrarLibro.Size = New System.Drawing.Size(94, 34)
         Me.borrarLibro.TabIndex = 2
         Me.borrarLibro.Text = "Eliminar"
         Me.borrarLibro.UseVisualStyleBackColor = False
@@ -122,17 +126,18 @@ Partial Class EliminarLibros1
         'comboToDelete
         '
         Me.comboToDelete.FormattingEnabled = True
-        Me.comboToDelete.Location = New System.Drawing.Point(81, 51)
+        Me.comboToDelete.Location = New System.Drawing.Point(71, 38)
+        Me.comboToDelete.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.comboToDelete.Name = "comboToDelete"
-        Me.comboToDelete.Size = New System.Drawing.Size(210, 36)
+        Me.comboToDelete.Size = New System.Drawing.Size(184, 29)
         Me.comboToDelete.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, 53)
+        Me.Label1.Location = New System.Drawing.Point(6, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 28)
+        Me.Label1.Size = New System.Drawing.Size(43, 21)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Elige"
         '
@@ -140,9 +145,9 @@ Partial Class EliminarLibros1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(525, 32)
+        Me.Label2.Location = New System.Drawing.Point(484, 25)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(214, 23)
+        Me.Label2.Size = New System.Drawing.Size(174, 19)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "EJEMPLARES DISPONIBLES"
         '
@@ -183,23 +188,24 @@ Partial Class EliminarLibros1
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.data3.DefaultCellStyle = DataGridViewCellStyle6
-        Me.data3.Location = New System.Drawing.Point(376, 389)
+        Me.data3.Location = New System.Drawing.Point(329, 292)
+        Me.data3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.data3.Name = "data3"
         Me.data3.ReadOnly = True
         Me.data3.RowHeadersVisible = False
         Me.data3.RowHeadersWidth = 51
         Me.data3.RowTemplate.Height = 29
         Me.data3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.data3.Size = New System.Drawing.Size(475, 102)
+        Me.data3.Size = New System.Drawing.Size(443, 112)
         Me.data3.TabIndex = 5
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(515, 363)
+        Me.Label3.Location = New System.Drawing.Point(484, 271)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(202, 23)
+        Me.Label3.Size = New System.Drawing.Size(164, 19)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "EJEMPLARES PRESTADOS"
         '
@@ -209,9 +215,11 @@ Partial Class EliminarLibros1
         Me.GroupBox2.Controls.Add(Me.deleteSinLibro)
         Me.GroupBox2.Controls.Add(Me.autoresSinLibro)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox2.Location = New System.Drawing.Point(19, 299)
+        Me.GroupBox2.Location = New System.Drawing.Point(17, 224)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(298, 204)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox2.Size = New System.Drawing.Size(261, 153)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Autores sin ejemplares"
@@ -220,9 +228,10 @@ Partial Class EliminarLibros1
         '
         Me.deleteSinLibro.BackColor = System.Drawing.Color.LightSkyBlue
         Me.deleteSinLibro.Font = New System.Drawing.Font("Segoe UI Semibold", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.deleteSinLibro.Location = New System.Drawing.Point(88, 127)
+        Me.deleteSinLibro.Location = New System.Drawing.Point(77, 95)
+        Me.deleteSinLibro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.deleteSinLibro.Name = "deleteSinLibro"
-        Me.deleteSinLibro.Size = New System.Drawing.Size(107, 49)
+        Me.deleteSinLibro.Size = New System.Drawing.Size(94, 37)
         Me.deleteSinLibro.TabIndex = 1
         Me.deleteSinLibro.Text = "Borrar"
         Me.deleteSinLibro.UseVisualStyleBackColor = False
@@ -230,42 +239,42 @@ Partial Class EliminarLibros1
         'autoresSinLibro
         '
         Me.autoresSinLibro.FormattingEnabled = True
-        Me.autoresSinLibro.Location = New System.Drawing.Point(43, 64)
+        Me.autoresSinLibro.Location = New System.Drawing.Point(38, 48)
+        Me.autoresSinLibro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.autoresSinLibro.Name = "autoresSinLibro"
-        Me.autoresSinLibro.Size = New System.Drawing.Size(210, 36)
+        Me.autoresSinLibro.Size = New System.Drawing.Size(184, 29)
         Me.autoresSinLibro.TabIndex = 0
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.White
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(434, 521)
+        Me.Label4.Location = New System.Drawing.Point(10, 9)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(373, 23)
+        Me.Label4.Size = New System.Drawing.Size(335, 19)
         Me.Label4.TabIndex = 8
-        Me.Label4.Text = "No puedes eliminar los ejemplares en préstamo"
+        Me.Label4.Text = "*No puedes eliminar los ejemplares en préstamo"
         '
         'BtnFinalizarEliminar
         '
         Me.BtnFinalizarEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.BtnFinalizarEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.BtnFinalizarEliminar.Location = New System.Drawing.Point(778, 13)
-        Me.BtnFinalizarEliminar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.BtnFinalizarEliminar.Location = New System.Drawing.Point(681, 10)
         Me.BtnFinalizarEliminar.Name = "BtnFinalizarEliminar"
-        Me.BtnFinalizarEliminar.Size = New System.Drawing.Size(106, 42)
+        Me.BtnFinalizarEliminar.Size = New System.Drawing.Size(93, 32)
         Me.BtnFinalizarEliminar.TabIndex = 9
         Me.BtnFinalizarEliminar.Text = "Finalizar"
         Me.BtnFinalizarEliminar.UseVisualStyleBackColor = False
         '
         'EliminarLibros1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.TallerPráctico3.My.Resources.Resources.pexels_codioful__formerly_gradienta__7130498
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(896, 553)
+        Me.ClientSize = New System.Drawing.Size(784, 415)
         Me.ControlBox = False
         Me.Controls.Add(Me.BtnFinalizarEliminar)
         Me.Controls.Add(Me.Label4)
@@ -276,6 +285,7 @@ Partial Class EliminarLibros1
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Data2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "EliminarLibros1"

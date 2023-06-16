@@ -3,9 +3,9 @@ Imports System.Drawing
 Imports System.Data.SqlClient
 Public Class MenuPrincipal
     'conexion kendrick
-    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
-    Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
 
     ' Variables para guardar la posición y el tamaño del formulario
     Dim mouseDownm As Boolean = False
@@ -132,6 +132,7 @@ Public Class MenuPrincipal
     End Class
     Private Class cols
         Inherits ProfessionalColorTable
+
         'over de menu
         Public Overrides ReadOnly Property MenuItemSelected As Color
             ' cuando el menú está seleccionado
@@ -166,14 +167,15 @@ Public Class MenuPrincipal
     '---------------------------------------LOAD-------------------------------------------
     Public Sub MostrarLibros()
         conex.Open()
-        Dim consulta As String = "select * from Books WHERE estadoLibro='Libre'"
+        Dim consulta As String = "select Title,estadoLibro from Books WHERE estadoLibro='Libre'"
         Dim ejecutar As New SqlCommand(consulta, conex)
         Try
             Dim tabla As New SqlDataAdapter(ejecutar)
             Dim dss As New DataSet
             tabla.Fill(dss, "Books")
             Me.DataGridView1.DataSource = dss.Tables("Books")
-
+            DataGridView1.Columns("Title").HeaderText = "Título del Libro"
+            DataGridView1.Columns("estadoLibro").HeaderText = "Estado del Libro"
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         Finally
@@ -188,6 +190,7 @@ Public Class MenuPrincipal
         TableLayoutPanel1.Cursor = Cursors.Arrow
         MenuStrip1.Renderer = New renderer()
         MostrarLibros()
+
     End Sub
 
     '------------------------------------------
@@ -289,11 +292,15 @@ Public Class MenuPrincipal
         'borrar pagina
         'titulo de pagina
         Dim newPage As New TabPage("Clientes")
+
         'mover tabb
         newPage.Controls.Add(mensaje)
+
         ContForms.TabPages.Add(newPage)
+
         mensaje.Show()
         ContForms.SelectedTab = newPage
+
     End Sub
     'opcion de barra de menu
     'Agregar Libros
@@ -402,9 +409,5 @@ Public Class MenuPrincipal
                 MostrarLibros()
             End If
         End If
-    End Sub
-
-    Private Sub ContenidoMenuPrincipal_Paint(sender As Object, e As PaintEventArgs) Handles ContenidoMenuPrincipal.Paint
-
     End Sub
 End Class

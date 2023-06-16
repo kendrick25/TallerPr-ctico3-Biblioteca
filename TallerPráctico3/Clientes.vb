@@ -1,11 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Public Class Clientes
     'conexion kendrick
-    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
-    Dim conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
     Const ValorMaxEnterosSQL As Double = 2147483648
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles FinzalizarClientes.Click
         Dim resultado As MsgBoxResult
         resultado = CType(MessageBox.Show("¿Desea finalizar el Progreso actual de registro de Clientes?", " Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question), MsgBoxResult)
         If resultado = MsgBoxResult.No Then
@@ -35,7 +35,14 @@ Public Class Clientes
             Dim dss As New DataSet
             tabla.Fill(dss, "Cliente")
             Me.DataGridView1.DataSource = dss.Tables("Cliente")
-
+            DataGridView1.Columns("idPrestamos").HeaderText = "ID"
+            DataGridView1.Columns("nombreCl").HeaderText = "Nombre"
+            DataGridView1.Columns("LibroUso").HeaderText = "Libro"
+            DataGridView1.Columns("fechaPrestamo").HeaderText = "Fecha de Prestamo"
+            DataGridView1.Columns("fechaDevol").HeaderText = "Fecha de Devolución"
+            DataGridView1.Columns("deterioro").HeaderText = "Deterioro"
+            DataGridView1.Columns("morosidad").HeaderText = "Dias de Morosidad"
+            DataGridView1.Columns("precio").HeaderText = "Precio"
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         Finally
@@ -55,10 +62,10 @@ Public Class Clientes
     End Sub
 
     Private Sub BtnAccion_Click(sender As Object, e As EventArgs) Handles BtnAccion.Click
+        'Agregar Cliente
         If OpcionAgregar.Checked = True And TextName.Text <> "" And TxtPrestamo.Text <> "" And ComboLibros.Text <> "" Then
             'calculo de valores
             'valor max id
-            Dim valmax As Integer
             conex.Open()
             Dim nuevoValor As Integer
             Dim command As New SqlCommand("SELECT ISNULL(MAX(idPrestamos), 0) + 1 AS NuevoValor FROM Cliente", conex)
@@ -88,7 +95,7 @@ Public Class Clientes
             procDelete.Parameters.AddWithValue("@fechaPrestamo", DateTime.Now)
             procDelete.Parameters.AddWithValue("@fechaDevol", fechaPrestamo)
             procDelete.Parameters.AddWithValue("@precio", precio)
-            procDelete.Parameters.AddWithValue("@deterioro", EstadoNormal.Text)
+            procDelete.Parameters.AddWithValue("@deterioro", "Normal")
             procDelete.Parameters.AddWithValue("@morosidad", 0)
             procDelete.Parameters.AddWithValue("@Estado", "Uso")
             'Ejecutar procedimiento
@@ -108,57 +115,84 @@ Public Class Clientes
             If OpcionAgregar.Checked = False And OpcionImprimir.Checked = False Then
 
             End If
-            If TextName.Text = "" Then
+            If TextName.Text = "" And OpcionAgregar.Checked = True Then
                 ErrorName.Visible = True
             End If
-            If TxtPrestamo.Text = "" Then
+            If TxtPrestamo.Text = "" And OpcionAgregar.Checked = True Then
                 ErrorPrestamo.Visible = True
             End If
-            If ComboLibros.Text = "" Then
+            If ComboLibros.Text = "" And OpcionAgregar.Checked = True Then
                 ErrorLibro.Visible = True
             End If
         End If
-        'Imprimir Factura
+        'Modificar Registro
         If OpcionImprimir.Checked = True And TextName.Text <> "" And ComboLibros.Text <> "" Then
             '---------------------------
-            'calculo de valores
-            conex.Open()
-            Dim cmd As New SqlCommand("SELECT DATEDIFF(day, fechaPrestamo, fechaDevol) AS Diferencia FROM Cliente WHERE nombreCl='" & TextName.Text & "' AND LibroUso='" & ComboLibros.Text & "'", conex)
-            Dim dias As Integer = cmd.ExecuteScalar()
-            conex.Close()
-            'precio
-            Dim estado As Double
-            Dim DeterioroLibro As String = ""
-            If EstadoNormal.Checked = True Then
-                estado = 0.0
-                DeterioroLibro = EstadoNormal.Text
-            Else
-                If EstadoDañado.Checked = True Then
-                    estado = 20.0
-                    DeterioroLibro = EstadoDañado.Text
+            If EstadoNormal.Checked = True Or EstadoDañado.Checked = True Then
+                If CheckSi.Checked = True Or CheckNo.Checked = True Then
+                    If CheckSi.Checked = True And TextMorosidad.Text = "" Then
+                        MessageBox.Show("Revise el campo de Días de Morosidad, iingrese valor mayores a 0 o desmarque la casilla de Si en Atraso de entrega.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        'errores
+                        Exit Sub
+                    End If
+                    'calculo de valores
+                    conex.Open()
+                    Dim cmd As New SqlCommand("SELECT DATEDIFF(day, fechaPrestamo, fechaDevol) AS Diferencia FROM Cliente WHERE nombreCl='" & TextName.Text & "' AND LibroUso='" & ComboLibros.Text & "'", conex)
+                    Dim dias As Integer = cmd.ExecuteScalar()
+                    conex.Close()
+                    'precio
+                    Dim estado As Double
+                    Dim DeterioroLibro As String = ""
+                    If EstadoNormal.Checked = True Then
+                        estado = 0.0
+                        DeterioroLibro = EstadoNormal.Text
+                    Else
+                        If EstadoDañado.Checked = True Then
+                            estado = 20.0
+                            DeterioroLibro = EstadoDañado.Text
+                        End If
+                    End If
+                    Dim diasMorosidad As Integer
+                    Integer.TryParse(TextMorosidad.Text, diasMorosidad)
+                    Dim precio As Double
+                    precio = (dias * 0.5) + (diasMorosidad * 0.75) + estado
+                    'Procedimiento almacenado para agregar cliente el libro seleccionado del combo
+                    conex.Open()
+                    Dim procDelete As New SqlCommand()
+                    procDelete.Connection = conex
+                    procDelete.CommandType = CommandType.StoredProcedure
+                    procDelete.CommandText = "ActualizarClientes"
+                    procDelete.Parameters.AddWithValue("@nombreCl", TextName.Text)
+                    procDelete.Parameters.AddWithValue("@LibroUSO", ComboLibros.Text)
+                    procDelete.Parameters.AddWithValue("@precio", precio)
+                    procDelete.Parameters.AddWithValue("@deterioro", DeterioroLibro)
+                    procDelete.Parameters.AddWithValue("@morosidad", diasMorosidad)
+                    'Ejecutar procedimiento
+                    procDelete.ExecuteNonQuery()
+                    MessageBox.Show("Registro de Cliente Modificado", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    conex.Close()
+                    LimpiarCampos()
+                    'dias de atraso
+                    LabelAtraso.Visible = True
+                    CheckSi.Checked = False
+                    CheckNo.Checked = False
+                    EstadoNormal.Checked = False
+                    EstadoDañado.Checked = False
+                    'errores
+                    ErrorPrestamo.Visible = False
+                    ErrorLibro.Visible = False
+                    ErrorName.Visible = False
+                    ErrorMorosidad.Visible = False
+                    '---------------------------
+                Else
+                    MessageBox.Show("Revise que se encuentre seleccionada minimo una opcion de Atraso de la entrega", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    'errores
+
                 End If
+            Else
+                'errores
+                MessageBox.Show("Revise que se encuentre seleccionada minimo una opcion de Estado del Libro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
-            Dim diasMorosidad As Integer
-            Integer.TryParse(TextMorosidad.Text, diasMorosidad)
-            Dim precio As Double
-            precio = (dias * 0.5) + (diasMorosidad * 0.75) + estado
-            'Procedimiento almacenado para agregar cliente el libro seleccionado del combo
-            conex.Open()
-            Dim procDelete As New SqlCommand()
-            procDelete.Connection = conex
-            procDelete.CommandType = CommandType.StoredProcedure
-            procDelete.CommandText = "ActualizarClientes"
-            procDelete.Parameters.AddWithValue("@nombreCl", TextName.Text)
-            procDelete.Parameters.AddWithValue("@LibroUSO", ComboLibros.Text)
-            procDelete.Parameters.AddWithValue("@precio", precio)
-            procDelete.Parameters.AddWithValue("@deterioro", DeterioroLibro)
-            procDelete.Parameters.AddWithValue("@morosidad", diasMorosidad)
-            'Ejecutar procedimiento
-            procDelete.ExecuteNonQuery()
-            MessageBox.Show("Registro de Cliente Modificado", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            conex.Close()
-            LimpiarCampos()
-            '---------------------------
         End If
     End Sub
     Public Sub LimpiarCampos()
@@ -176,7 +210,6 @@ Public Class Clientes
         ErrorPrestamo.Visible = False
         ErrorLibro.Visible = False
         ErrorName.Visible = False
-
         ErrorMorosidad.Visible = False
     End Sub
     Public Sub NoVisible()
@@ -222,28 +255,13 @@ Public Class Clientes
                 NoVisible()
                 labelLibros.Visible = True
                 ComboLibros.Visible = True
-                'dias de atraso
-                LabelAtraso.Visible = True
-                CheckSi.Enabled = False
-                CheckSi.Checked = False
-                CheckSi.Visible = True
-                CheckNo.Enabled = False
-                CheckNo.Visible = True
-                CheckNo.Checked = True
-                'estado del libro
-                LabelEstadoLibro.Visible = True
-                EstadoNormal.Enabled = False
-                EstadoNormal.Visible = True
-                EstadoNormal.Checked = True
-                EstadoDañado.Enabled = False
-                EstadoDañado.Visible = True
-                EstadoDañado.Checked = False
                 'dias de prestamo
                 LabelDiasPrestamos.Visible = True
                 TxtPrestamo.Visible = True
                 'btns
                 BtnAccion.Visible = True
-                BtnAccion.Text = "Agregar"
+                BtnAccion.BackColor = Color.Green
+                BtnAccion.Text = " Agregar "
             End If
         End If
     End Sub
@@ -273,8 +291,10 @@ Public Class Clientes
                 EstadoDañado.Enabled = True
                 'btns
                 BtnAccion.Text = "Modificar"
+                BtnAccion.BackColor = Color.Orange
                 BtnAccion.Visible = False
                 PagarTodo.Visible = False
+                PagarTodo.BackColor = Color.Red
             End If
         End If
     End Sub
@@ -390,6 +410,8 @@ Public Class Clientes
                 For Each row As DataGridViewRow In DataGridView1.Rows
                     If row.Cells("nombreCl").Value IsNot Nothing AndAlso row.Cells("nombreCl").Value.ToString().ToLower() = TextName.Text Or row.Cells("nombreCl").Value.ToString() = TextName.Text Then
                         PagarTodo.Visible = True
+                        'btnAccion
+                        BtnAccion.Visible = False
                         row.Selected = True
                         suma += Convert.ToDouble(row.Cells("precio").Value)
                         PagarTodo.Text = "Pagar Todo"
