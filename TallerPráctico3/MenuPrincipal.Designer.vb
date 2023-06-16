@@ -52,6 +52,13 @@ Partial Class MenuPrincipal
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BtnEliminarLibro = New System.Windows.Forms.Button()
         Me.AbrirForm1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Border.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MovForm.SuspendLayout()
@@ -61,6 +68,9 @@ Partial Class MenuPrincipal
         Me.TabPage1.SuspendLayout()
         Me.ContenidoMenuPrincipal.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Border
@@ -271,7 +281,15 @@ Partial Class MenuPrincipal
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Black
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.PictureBox3)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.ContForms)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 32)
@@ -283,14 +301,14 @@ Partial Class MenuPrincipal
         'ContForms
         '
         Me.ContForms.Controls.Add(Me.TabPage1)
-        Me.ContForms.Dock = System.Windows.Forms.DockStyle.Left
+        Me.ContForms.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ContForms.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ContForms.Location = New System.Drawing.Point(0, 0)
         Me.ContForms.Margin = New System.Windows.Forms.Padding(0)
         Me.ContForms.Name = "ContForms"
         Me.ContForms.Padding = New System.Drawing.Point(5, 3)
         Me.ContForms.SelectedIndex = 0
-        Me.ContForms.Size = New System.Drawing.Size(405, 464)
+        Me.ContForms.Size = New System.Drawing.Size(896, 464)
         Me.ContForms.TabIndex = 0
         '
         'TabPage1
@@ -300,7 +318,7 @@ Partial Class MenuPrincipal
         Me.TabPage1.Location = New System.Drawing.Point(4, 26)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(0)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(397, 434)
+        Me.TabPage1.Size = New System.Drawing.Size(888, 434)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Menu Principal"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -317,7 +335,7 @@ Partial Class MenuPrincipal
         Me.ContenidoMenuPrincipal.Location = New System.Drawing.Point(0, 0)
         Me.ContenidoMenuPrincipal.Margin = New System.Windows.Forms.Padding(0)
         Me.ContenidoMenuPrincipal.Name = "ContenidoMenuPrincipal"
-        Me.ContenidoMenuPrincipal.Size = New System.Drawing.Size(397, 434)
+        Me.ContenidoMenuPrincipal.Size = New System.Drawing.Size(888, 434)
         Me.ContenidoMenuPrincipal.TabIndex = 0
         '
         'Label2
@@ -326,7 +344,7 @@ Partial Class MenuPrincipal
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(79, 10)
+        Me.Label2.Location = New System.Drawing.Point(325, 10)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(233, 30)
         Me.Label2.TabIndex = 3
@@ -381,7 +399,7 @@ Partial Class MenuPrincipal
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 25
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(261, 301)
+        Me.DataGridView1.Size = New System.Drawing.Size(752, 301)
         Me.DataGridView1.TabIndex = 2
         '
         'BtnEliminarLibro
@@ -393,7 +411,7 @@ Partial Class MenuPrincipal
         Me.BtnEliminarLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEliminarLibro.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnEliminarLibro.ForeColor = System.Drawing.Color.White
-        Me.BtnEliminarLibro.Location = New System.Drawing.Point(190, 50)
+        Me.BtnEliminarLibro.Location = New System.Drawing.Point(681, 50)
         Me.BtnEliminarLibro.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnEliminarLibro.MaximumSize = New System.Drawing.Size(134, 32)
         Me.BtnEliminarLibro.MinimumSize = New System.Drawing.Size(134, 32)
@@ -412,7 +430,7 @@ Partial Class MenuPrincipal
         Me.AbrirForm1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AbrirForm1.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.AbrirForm1.ForeColor = System.Drawing.Color.White
-        Me.AbrirForm1.Location = New System.Drawing.Point(45, 50)
+        Me.AbrirForm1.Location = New System.Drawing.Point(536, 50)
         Me.AbrirForm1.Margin = New System.Windows.Forms.Padding(0)
         Me.AbrirForm1.MaximumSize = New System.Drawing.Size(134, 32)
         Me.AbrirForm1.MinimumSize = New System.Drawing.Size(134, 32)
@@ -421,6 +439,101 @@ Partial Class MenuPrincipal
         Me.AbrirForm1.TabIndex = 0
         Me.AbrirForm1.Text = "Agregar Libro"
         Me.AbrirForm1.UseVisualStyleBackColor = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(247, 225)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label3.MaximumSize = New System.Drawing.Size(464, 63)
+        Me.Label3.MinimumSize = New System.Drawing.Size(464, 63)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(464, 63)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Somos una Empresa de Desarrollo de Sistemas informáticos" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "que brinda soluciones ó" &
+    "ptimas para el cálculo de cualquier " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "índole que se requiera."
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(397, 300)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label4.MaximumSize = New System.Drawing.Size(105, 21)
+        Me.Label4.MinimumSize = New System.Drawing.Size(105, 21)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(105, 21)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Contáctenos"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(166, 344)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label5.MaximumSize = New System.Drawing.Size(213, 21)
+        Me.Label5.MinimumSize = New System.Drawing.Size(213, 21)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(213, 21)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Telefono :  +507 6592-1274"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(507, 344)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label6.MaximumSize = New System.Drawing.Size(295, 21)
+        Me.Label6.MinimumSize = New System.Drawing.Size(295, 21)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(295, 21)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "Correo : DKCodeSolution@gmail.com"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox3.Location = New System.Drawing.Point(429, 332)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
+        Me.PictureBox3.MaximumSize = New System.Drawing.Size(56, 44)
+        Me.PictureBox3.MinimumSize = New System.Drawing.Size(56, 44)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(56, 44)
+        Me.PictureBox3.TabIndex = 8
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox2.Location = New System.Drawing.Point(110, 332)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(0)
+        Me.PictureBox2.MaximumSize = New System.Drawing.Size(56, 44)
+        Me.PictureBox2.MinimumSize = New System.Drawing.Size(56, 44)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(56, 44)
+        Me.PictureBox2.TabIndex = 9
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Location = New System.Drawing.Point(330, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
+        Me.PictureBox1.MinimumSize = New System.Drawing.Size(209, 141)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(298, 213)
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
         '
         'MenuPrincipal
         '
@@ -444,11 +557,15 @@ Partial Class MenuPrincipal
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ContForms.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.ContenidoMenuPrincipal.ResumeLayout(False)
         Me.ContenidoMenuPrincipal.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -478,4 +595,11 @@ Partial Class MenuPrincipal
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
 End Class

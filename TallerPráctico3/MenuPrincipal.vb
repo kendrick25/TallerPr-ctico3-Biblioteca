@@ -190,11 +190,33 @@ Public Class MenuPrincipal
         TableLayoutPanel1.Cursor = Cursors.Arrow
         MenuStrip1.Renderer = New renderer()
         MostrarLibros()
-
+        Dim Img As Image = My.Resources.Logo_2023
+        Panel1.BackgroundImage = Img
+        'nosotros visible
+        PictureBox1.Visible = False
+        PictureBox2.Visible = False
+        PictureBox3.Visible = False
+        Label3.Visible = False
+        Label4.Visible = False
+        Label5.Visible = False
+        Label6.Visible = False
     End Sub
 
     '------------------------------------------
     Private Sub BibliotecaArchivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BibliotecaArchivosToolStripMenuItem.Click
+        'imagen de recursos
+        Panel1.Visible = False
+        Dim Img As Image = My.Resources.Logo_2023
+        Panel1.BackgroundImage = Img
+        Panel1.BackgroundImageLayout = ImageLayout.Zoom
+        'nosotros visible
+        PictureBox1.Visible = False
+        PictureBox2.Visible = False
+        PictureBox3.Visible = False
+        Label3.Visible = False
+        Label4.Visible = False
+        Label5.Visible = False
+        Label6.Visible = False
         If ContForms.Visible = True Then
             VerLibrosToolStripMenuItem.Text = "Ocultar Menu"
 
@@ -409,5 +431,18 @@ Public Class MenuPrincipal
                 MostrarLibros()
             End If
         End If
+    End Sub
+
+    Private Sub NosotrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NosotrosToolStripMenuItem.Click
+        'nosotros visible
+        PictureBox1.Visible = True
+        PictureBox2.Visible = True
+        PictureBox3.Visible = True
+        Label3.Visible = True
+        Label4.Visible = True
+        Label5.Visible = True
+        Label6.Visible = True
+        ContForms.Visible = False
+        Panel1.BackgroundImage = Nothing
     End Sub
 End Class
