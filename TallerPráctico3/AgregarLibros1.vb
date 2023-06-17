@@ -8,10 +8,10 @@ Public Class AgregarLibros1
     'Además actualiza cuando se hacen cambios en la tabla
 
     'conexion kendrick
-    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
 
     'Conexion dilan
-    'Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
 
 
     Public Sub MostrarLibros()
@@ -322,6 +322,5 @@ Public Class AgregarLibros1
         GroupBox2.Enabled = True
         GroupBox1.Enabled = True
     End Sub
-
 
 End Class

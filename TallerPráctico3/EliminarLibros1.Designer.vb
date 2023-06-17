@@ -41,10 +41,17 @@ Partial Class EliminarLibros1
         Me.autoresSinLibro = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnFinalizarEliminar = New System.Windows.Forms.Button()
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         CType(Me.Data2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.data3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.Panel2.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Data2
@@ -59,8 +66,6 @@ Partial Class EliminarLibros1
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         Me.Data2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.Data2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Data2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Data2.BackgroundColor = System.Drawing.SystemColors.HighlightText
         Me.Data2.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -83,29 +88,30 @@ Partial Class EliminarLibros1
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Data2.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Data2.Location = New System.Drawing.Point(297, 46)
-        Me.Data2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Data2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Data2.Location = New System.Drawing.Point(3, 73)
         Me.Data2.Name = "Data2"
         Me.Data2.ReadOnly = True
         Me.Data2.RowHeadersVisible = False
         Me.Data2.RowHeadersWidth = 51
         Me.Data2.RowTemplate.Height = 29
         Me.Data2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Data2.Size = New System.Drawing.Size(290, 223)
+        Me.Data2.Size = New System.Drawing.Size(694, 263)
         Me.Data2.TabIndex = 2
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.borrarLibro)
         Me.GroupBox1.Controls.Add(Me.comboToDelete)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox1.Location = New System.Drawing.Point(10, 40)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Location = New System.Drawing.Point(46, 84)
+        Me.GroupBox1.MaximumSize = New System.Drawing.Size(306, 197)
+        Me.GroupBox1.MinimumSize = New System.Drawing.Size(306, 197)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(268, 148)
+        Me.GroupBox1.Size = New System.Drawing.Size(306, 197)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Eliminar Ejemplar"
@@ -114,10 +120,9 @@ Partial Class EliminarLibros1
         '
         Me.borrarLibro.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.borrarLibro.Font = New System.Drawing.Font("Segoe UI Semibold", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.borrarLibro.Location = New System.Drawing.Point(84, 94)
-        Me.borrarLibro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.borrarLibro.Location = New System.Drawing.Point(96, 125)
         Me.borrarLibro.Name = "borrarLibro"
-        Me.borrarLibro.Size = New System.Drawing.Size(94, 34)
+        Me.borrarLibro.Size = New System.Drawing.Size(107, 45)
         Me.borrarLibro.TabIndex = 2
         Me.borrarLibro.Text = "Eliminar"
         Me.borrarLibro.UseVisualStyleBackColor = False
@@ -125,34 +130,31 @@ Partial Class EliminarLibros1
         'comboToDelete
         '
         Me.comboToDelete.FormattingEnabled = True
-        Me.comboToDelete.Location = New System.Drawing.Point(71, 38)
-        Me.comboToDelete.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.comboToDelete.Location = New System.Drawing.Point(81, 51)
         Me.comboToDelete.Name = "comboToDelete"
-        Me.comboToDelete.Size = New System.Drawing.Size(184, 29)
+        Me.comboToDelete.Size = New System.Drawing.Size(210, 36)
         Me.comboToDelete.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 40)
+        Me.Label1.Location = New System.Drawing.Point(7, 53)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(43, 21)
+        Me.Label1.Size = New System.Drawing.Size(54, 28)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Elige"
         '
         'Label2
         '
-        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(354, 15)
-        Me.Label2.MaximumSize = New System.Drawing.Size(174, 19)
-        Me.Label2.MinimumSize = New System.Drawing.Size(174, 19)
+        Me.Label2.Location = New System.Drawing.Point(3, 44)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(174, 19)
+        Me.Label2.Size = New System.Drawing.Size(694, 26)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "EJEMPLARES DISPONIBLES"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'data3
         '
@@ -166,9 +168,6 @@ Partial Class EliminarLibros1
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
         Me.data3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.data3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.data3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.data3.BackgroundColor = System.Drawing.SystemColors.HighlightText
         Me.data3.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -191,42 +190,41 @@ Partial Class EliminarLibros1
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.data3.DefaultCellStyle = DataGridViewCellStyle6
-        Me.data3.Location = New System.Drawing.Point(297, 292)
-        Me.data3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.data3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.data3.Location = New System.Drawing.Point(3, 368)
         Me.data3.Name = "data3"
         Me.data3.ReadOnly = True
         Me.data3.RowHeadersVisible = False
         Me.data3.RowHeadersWidth = 51
         Me.data3.RowTemplate.Height = 29
         Me.data3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.data3.Size = New System.Drawing.Size(290, 173)
+        Me.data3.Size = New System.Drawing.Size(694, 264)
         Me.data3.TabIndex = 5
         '
         'Label3
         '
-        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(335, 270)
-        Me.Label3.MaximumSize = New System.Drawing.Size(164, 19)
-        Me.Label3.MinimumSize = New System.Drawing.Size(164, 19)
+        Me.Label3.Location = New System.Drawing.Point(3, 339)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(164, 19)
+        Me.Label3.Size = New System.Drawing.Size(694, 26)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "EJEMPLARES PRESTADOS"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.deleteSinLibro)
         Me.GroupBox2.Controls.Add(Me.autoresSinLibro)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox2.Location = New System.Drawing.Point(17, 224)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox2.Location = New System.Drawing.Point(54, 309)
+        Me.GroupBox2.MaximumSize = New System.Drawing.Size(298, 204)
+        Me.GroupBox2.MinimumSize = New System.Drawing.Size(298, 204)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox2.Size = New System.Drawing.Size(261, 153)
+        Me.GroupBox2.Size = New System.Drawing.Size(298, 204)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Autores sin ejemplares"
@@ -235,10 +233,9 @@ Partial Class EliminarLibros1
         '
         Me.deleteSinLibro.BackColor = System.Drawing.Color.LightSkyBlue
         Me.deleteSinLibro.Font = New System.Drawing.Font("Segoe UI Semibold", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.deleteSinLibro.Location = New System.Drawing.Point(77, 95)
-        Me.deleteSinLibro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.deleteSinLibro.Location = New System.Drawing.Point(88, 127)
         Me.deleteSinLibro.Name = "deleteSinLibro"
-        Me.deleteSinLibro.Size = New System.Drawing.Size(94, 37)
+        Me.deleteSinLibro.Size = New System.Drawing.Size(107, 49)
         Me.deleteSinLibro.TabIndex = 1
         Me.deleteSinLibro.Text = "Borrar"
         Me.deleteSinLibro.UseVisualStyleBackColor = False
@@ -246,55 +243,93 @@ Partial Class EliminarLibros1
         'autoresSinLibro
         '
         Me.autoresSinLibro.FormattingEnabled = True
-        Me.autoresSinLibro.Location = New System.Drawing.Point(38, 48)
-        Me.autoresSinLibro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.autoresSinLibro.Location = New System.Drawing.Point(43, 64)
         Me.autoresSinLibro.Name = "autoresSinLibro"
-        Me.autoresSinLibro.Size = New System.Drawing.Size(184, 29)
+        Me.autoresSinLibro.Size = New System.Drawing.Size(210, 36)
         Me.autoresSinLibro.TabIndex = 0
         '
         'Label4
         '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(10, 9)
+        Me.Label4.Location = New System.Drawing.Point(3, 33)
+        Me.Label4.MaximumSize = New System.Drawing.Size(398, 23)
+        Me.Label4.MinimumSize = New System.Drawing.Size(398, 23)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(335, 19)
+        Me.Label4.Size = New System.Drawing.Size(398, 23)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "*No puedes eliminar los ejemplares en préstamo"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BtnFinalizarEliminar
         '
         Me.BtnFinalizarEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnFinalizarEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.BtnFinalizarEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.BtnFinalizarEliminar.Location = New System.Drawing.Point(534, 2)
+        Me.BtnFinalizarEliminar.Location = New System.Drawing.Point(591, 4)
+        Me.BtnFinalizarEliminar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BtnFinalizarEliminar.Name = "BtnFinalizarEliminar"
-        Me.BtnFinalizarEliminar.Size = New System.Drawing.Size(93, 32)
+        Me.BtnFinalizarEliminar.Size = New System.Drawing.Size(106, 36)
         Me.BtnFinalizarEliminar.TabIndex = 9
         Me.BtnFinalizarEliminar.Text = "Finalizar"
         Me.BtnFinalizarEliminar.UseVisualStyleBackColor = False
         '
+        'SplitContainer1
+        '
+        Me.SplitContainer1.Cursor = System.Windows.Forms.Cursors.VSplit
+        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer1.Name = "SplitContainer1"
+        '
+        'SplitContainer1.Panel1
+        '
+        Me.SplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Label4)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.GroupBox1)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.GroupBox2)
+        Me.SplitContainer1.Panel1MinSize = 400
+        '
+        'SplitContainer1.Panel2
+        '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.TableLayoutPanel1)
+        Me.SplitContainer1.Size = New System.Drawing.Size(1104, 635)
+        Me.SplitContainer1.SplitterDistance = 400
+        Me.SplitContainer1.TabIndex = 10
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.data3, 0, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.BtnFinalizarEliminar, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Data2, 0, 2)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 5
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(700, 635)
+        Me.TableLayoutPanel1.TabIndex = 0
+        '
         'EliminarLibros1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.BackgroundImage = Global.TallerPráctico3.My.Resources.Resources.pexels_codioful__formerly_gradienta__7130498
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(721, 476)
+        Me.ClientSize = New System.Drawing.Size(1104, 635)
         Me.ControlBox = False
-        Me.Controls.Add(Me.BtnFinalizarEliminar)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.data3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Data2)
+        Me.Controls.Add(Me.SplitContainer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "EliminarLibros1"
@@ -306,8 +341,14 @@ Partial Class EliminarLibros1
         Me.GroupBox1.PerformLayout()
         CType(Me.data3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel1.PerformLayout()
+        Me.SplitContainer1.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -324,4 +365,6 @@ Partial Class EliminarLibros1
     Friend WithEvents deleteSinLibro As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents BtnFinalizarEliminar As Button
+    Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class

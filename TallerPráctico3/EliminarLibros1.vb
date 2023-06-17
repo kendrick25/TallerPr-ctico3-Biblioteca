@@ -2,9 +2,9 @@
 Public Class EliminarLibros1
 
     'conexion kendrick
-    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
-    'Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
 
     'Igual que en el form de agregar, se aplica la funcion mostrar tabla para ir actualizando
     Public Sub MostrarLibros()
@@ -227,5 +227,19 @@ Public Class EliminarLibros1
         End If
     End Sub
 
+    Private Sub SplitContainer1_Panel1_Paint(sender As Object, e As PaintEventArgs)
 
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

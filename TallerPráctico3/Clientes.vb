@@ -1,9 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Public Class Clientes
     'conexion kendrick
-    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
-    'Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
     Const ValorMaxEnterosSQL As Double = 2147483648
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles FinzalizarClientes.Click
         Dim resultado As MsgBoxResult
@@ -571,4 +571,15 @@ Public Class Clientes
         End If
     End Sub
 
+    Private Sub OpcionAgregar_CheckedChanged(sender As Object, e As EventArgs) Handles OpcionAgregar.CheckedChanged
+
+    End Sub
+
+    Private Sub OpcionImprimir_CheckedChanged(sender As Object, e As EventArgs) Handles OpcionImprimir.CheckedChanged
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
 End Class
