@@ -1,9 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Public Class Clientes
     'conexion kendrick
-    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
-    Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
     Const ValorMaxEnterosSQL As Double = 2147483648
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles FinzalizarClientes.Click
         Dim resultado As MsgBoxResult
@@ -25,6 +25,8 @@ Public Class Clientes
         ComboLibros.DropDownStyle = ComboBoxStyle.DropDownList
         MostrarLibros()
         NoVisible()
+        TableLayoutPanel1.RowStyles(0).Height = 110
+        TableLayoutPanel2.RowStyles(1).Height = 0
     End Sub
     Public Sub MostrarClientes()
         conex.Open()
@@ -182,7 +184,6 @@ Public Class Clientes
                     ErrorPrestamo.Visible = False
                     ErrorLibro.Visible = False
                     ErrorName.Visible = False
-                    ErrorMorosidad.Visible = False
                     '---------------------------
                 Else
                     MessageBox.Show("Revise que se encuentre seleccionada minimo una opcion de Atraso de la entrega", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -211,6 +212,9 @@ Public Class Clientes
         ErrorLibro.Visible = False
         ErrorName.Visible = False
         ErrorMorosidad.Visible = False
+        'morosiadad
+        TextMorosidad.Visible = False
+        LabelMorosidad.Visible = False
     End Sub
     Public Sub NoVisible()
         labelLibros.Visible = False
@@ -244,6 +248,8 @@ Public Class Clientes
         LabelPrecioPagarLibro.Visible = False
     End Sub
     Private Sub OpcionAgregar_click(sender As Object, e As EventArgs) Handles OpcionAgregar.Click
+        TableLayoutPanel1.RowStyles(0).Height = 110
+        TableLayoutPanel2.RowStyles(1).Height = 0
         LimpiarCampos()
         ComboLibros.Items.Clear()
         MostrarLibros()
@@ -270,9 +276,13 @@ Public Class Clientes
         LimpiarCampos()
         OpcionAgregar.Checked = False
         If OpcionAgregar.Checked = False And OpcionImprimir.Checked = False Then
+            TableLayoutPanel1.RowStyles(0).Height = 110
+            TableLayoutPanel2.RowStyles(1).Height = 0
             NoVisible()
         Else
             If OpcionImprimir.Checked = True And OpcionAgregar.Checked = False Then
+                TableLayoutPanel1.RowStyles(0).Height = 185
+                TableLayoutPanel2.RowStyles(1).Height = 80
                 NoVisible()
                 labelLibros.Visible = True
                 ComboLibros.Items.Clear()
@@ -380,7 +390,7 @@ Public Class Clientes
         If TextName.Text = “” Or IsNumeric(TextName.Text) Or TextName.Text.Length > 50 Or TextName.Text = "" Then
             If TextName.Text = “” Or TextName.Text = "" Then
                 ComboLibros.DataSource = Nothing
-                ComboLibros.Items.Clear()
+                DataGridView1.ClearSelection()
                 MostrarClientes()
                 PagarTodo.Visible = False
                 ErrorName.Visible = True
@@ -397,7 +407,7 @@ Public Class Clientes
                 DataGridView1.ClearSelection()
                 conex.Open()
 
-                Dim cmd As New SqlCommand("SELECT idPrestamos,nombreCl,LibroUso,fechaPrestamo,fechaDevol,deterioro,morosidad,precio FROM Cliente WHERE UPPER(nombreCl) LIKE UPPER(@myValue)", conex)
+                Dim cmd As New SqlCommand("SELECT idPrestamos,nombreCl,LibroUso,fechaPrestamo,fechaDevol,deterioro,morosidad,precio FROM Cliente WHERE nombreCl LIKE @myValue", conex)
                 cmd.Parameters.AddWithValue("@myValue", "%" & TextName.Text & "%")
                 Dim tabla As New SqlDataAdapter(cmd)
 
@@ -449,7 +459,7 @@ Public Class Clientes
                             'mostrar solo el buscado)
                             'btns
                             BtnAccion.Visible = True
-
+                            PagarTodo.Visible = True
                             PagarTodo.Text = "Pagar"
 
                             'Resultados 
@@ -487,6 +497,9 @@ Public Class Clientes
             MessageBox.Show("Prestamo Pagado", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information)
             conex.Close()
             LimpiarCampos()
+            TextMorosidad.Visible = False
+            LabelMorosidad.Visible = False
+            ErrorMorosidad.Visible = False
         End If
         If PagarTodo.Text = "Pagar Todo" And TextName.Text <> "" Then
             For Each row As DataGridViewRow In DataGridView1.Rows
@@ -505,6 +518,7 @@ Public Class Clientes
                     'Ejecutar procedimiento
                     procDelete.ExecuteNonQuery()
                     conex.Close()
+
                 End If
             Next
             LimpiarCampos()

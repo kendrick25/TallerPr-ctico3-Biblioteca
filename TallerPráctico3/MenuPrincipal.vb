@@ -3,9 +3,9 @@ Imports System.Drawing
 Imports System.Data.SqlClient
 Public Class MenuPrincipal
     'conexion kendrick
-    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
-    Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
 
     ' Variables para guardar la posición y el tamaño del formulario
     Dim mouseDownm As Boolean = False
@@ -201,8 +201,8 @@ Public Class MenuPrincipal
         Label4.Visible = False
         Label5.Visible = False
         Label6.Visible = False
-    End Sub
 
+    End Sub
     '------------------------------------------
     Private Sub BibliotecaArchivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BibliotecaArchivosToolStripMenuItem.Click
         'imagen de recursos
@@ -315,8 +315,6 @@ Public Class MenuPrincipal
         ContForms.TabPages.Add(newPage)
         mensaje.Show()
         ContForms.SelectedTab = newPage
-
-
         'nosotros visible
         PictureBox1.Visible = False
         PictureBox2.Visible = False
@@ -380,14 +378,12 @@ Public Class MenuPrincipal
         'borrar pagina
         'titulo de pagina
         Dim newPage As New TabPage("Clientes")
-
         'mover tabb
         newPage.Controls.Add(mensaje)
 
         ContForms.TabPages.Add(newPage)
 
         mensaje.Show()
-
         ContForms.SelectedTab = newPage
         'nosotros visible
         PictureBox1.Visible = False
@@ -523,4 +519,5 @@ Public Class MenuPrincipal
         Label6.Visible = True
         ContForms.Visible = False
     End Sub
+
 End Class
