@@ -47,6 +47,7 @@ Partial Class AgregarLibros1
         Me.FinalizarForm = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.retrocederAccion = New System.Windows.Forms.Button()
         CType(Me.Data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -89,15 +90,14 @@ Partial Class AgregarLibros1
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Data.DefaultCellStyle = DataGridViewCellStyle3
         Me.Data.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Data.Location = New System.Drawing.Point(3, 230)
-        Me.Data.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Data.Location = New System.Drawing.Point(3, 307)
         Me.Data.Name = "Data"
         Me.Data.ReadOnly = True
         Me.Data.RowHeadersVisible = False
         Me.Data.RowHeadersWidth = 51
         Me.Data.RowTemplate.Height = 29
         Me.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Data.Size = New System.Drawing.Size(701, 230)
+        Me.Data.Size = New System.Drawing.Size(802, 306)
         Me.Data.TabIndex = 1
         '
         'Label1
@@ -106,10 +106,10 @@ Partial Class AgregarLibros1
         Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(0, 200)
+        Me.Label1.Location = New System.Drawing.Point(0, 267)
         Me.Label1.Margin = New System.Windows.Forms.Padding(0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(707, 28)
+        Me.Label1.Size = New System.Drawing.Size(808, 37)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "AGREGA LIBRO"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -118,9 +118,9 @@ Partial Class AgregarLibros1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(5, 29)
+        Me.Label2.Location = New System.Drawing.Point(6, 39)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(104, 21)
+        Me.Label2.Size = New System.Drawing.Size(133, 28)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Tipo de Autor"
         '
@@ -136,13 +136,11 @@ Partial Class AgregarLibros1
         Me.GroupBox1.Controls.Add(Me.opcionExiste)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 23)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.MaximumSize = New System.Drawing.Size(236, 95)
-        Me.GroupBox1.MinimumSize = New System.Drawing.Size(236, 95)
+        Me.GroupBox1.Location = New System.Drawing.Point(15, 31)
+        Me.GroupBox1.MaximumSize = New System.Drawing.Size(270, 127)
+        Me.GroupBox1.MinimumSize = New System.Drawing.Size(270, 127)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(236, 95)
+        Me.GroupBox1.Size = New System.Drawing.Size(270, 127)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalles"
@@ -151,9 +149,9 @@ Partial Class AgregarLibros1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(33, 62)
+        Me.Label4.Location = New System.Drawing.Point(38, 83)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(71, 21)
+        Me.Label4.Size = New System.Drawing.Size(89, 28)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Existente"
         '
@@ -161,19 +159,18 @@ Partial Class AgregarLibros1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(165, 62)
+        Me.Label3.Location = New System.Drawing.Point(189, 83)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(56, 21)
+        Me.Label3.Size = New System.Drawing.Size(70, 28)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Nuevo"
         '
         'opcionNuevo
         '
         Me.opcionNuevo.AutoSize = True
-        Me.opcionNuevo.Location = New System.Drawing.Point(144, 67)
-        Me.opcionNuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.opcionNuevo.Location = New System.Drawing.Point(165, 89)
         Me.opcionNuevo.Name = "opcionNuevo"
-        Me.opcionNuevo.Size = New System.Drawing.Size(15, 14)
+        Me.opcionNuevo.Size = New System.Drawing.Size(18, 17)
         Me.opcionNuevo.TabIndex = 5
         Me.opcionNuevo.UseVisualStyleBackColor = True
         '
@@ -182,10 +179,9 @@ Partial Class AgregarLibros1
         Me.opcionExiste.AutoSize = True
         Me.opcionExiste.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.opcionExiste.Font = New System.Drawing.Font("MS Outlook", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.opcionExiste.Location = New System.Drawing.Point(12, 68)
-        Me.opcionExiste.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.opcionExiste.Location = New System.Drawing.Point(14, 91)
         Me.opcionExiste.Name = "opcionExiste"
-        Me.opcionExiste.Size = New System.Drawing.Size(15, 14)
+        Me.opcionExiste.Size = New System.Drawing.Size(18, 17)
         Me.opcionExiste.TabIndex = 4
         Me.opcionExiste.UseVisualStyleBackColor = True
         '
@@ -196,23 +192,21 @@ Partial Class AgregarLibros1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.procesar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.procesar.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.procesar.Location = New System.Drawing.Point(68, 142)
-        Me.procesar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.procesar.MaximumSize = New System.Drawing.Size(105, 36)
-        Me.procesar.MinimumSize = New System.Drawing.Size(105, 36)
+        Me.procesar.Image = Global.TallerPráctico3.My.Resources.Resources.comprobar
+        Me.procesar.Location = New System.Drawing.Point(93, 176)
+        Me.procesar.MaximumSize = New System.Drawing.Size(49, 48)
+        Me.procesar.MinimumSize = New System.Drawing.Size(49, 48)
         Me.procesar.Name = "procesar"
-        Me.procesar.Size = New System.Drawing.Size(105, 36)
+        Me.procesar.Size = New System.Drawing.Size(49, 48)
         Me.procesar.TabIndex = 5
-        Me.procesar.Text = "Procesar"
         Me.procesar.UseVisualStyleBackColor = False
         '
         'autoresExisCombo
         '
         Me.autoresExisCombo.FormattingEnabled = True
-        Me.autoresExisCombo.Location = New System.Drawing.Point(127, 29)
-        Me.autoresExisCombo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.autoresExisCombo.Location = New System.Drawing.Point(145, 39)
         Me.autoresExisCombo.Name = "autoresExisCombo"
-        Me.autoresExisCombo.Size = New System.Drawing.Size(176, 29)
+        Me.autoresExisCombo.Size = New System.Drawing.Size(201, 36)
         Me.autoresExisCombo.TabIndex = 6
         '
         'GroupBox2
@@ -230,13 +224,11 @@ Partial Class AgregarLibros1
         Me.GroupBox2.Controls.Add(Me.autorExistenteLb)
         Me.GroupBox2.Controls.Add(Me.autoresExisCombo)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox2.Location = New System.Drawing.Point(272, 23)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox2.MaximumSize = New System.Drawing.Size(312, 169)
-        Me.GroupBox2.MinimumSize = New System.Drawing.Size(312, 169)
+        Me.GroupBox2.Location = New System.Drawing.Point(311, 31)
+        Me.GroupBox2.MaximumSize = New System.Drawing.Size(357, 225)
+        Me.GroupBox2.MinimumSize = New System.Drawing.Size(357, 225)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox2.Size = New System.Drawing.Size(312, 169)
+        Me.GroupBox2.Size = New System.Drawing.Size(357, 225)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Procesar"
@@ -244,56 +236,53 @@ Partial Class AgregarLibros1
         'inputCountry
         '
         Me.inputCountry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.inputCountry.Location = New System.Drawing.Point(127, 98)
-        Me.inputCountry.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.inputCountry.Location = New System.Drawing.Point(145, 131)
         Me.inputCountry.Name = "inputCountry"
-        Me.inputCountry.Size = New System.Drawing.Size(175, 29)
+        Me.inputCountry.Size = New System.Drawing.Size(200, 34)
         Me.inputCountry.TabIndex = 14
         '
         'residenciaAutorLb
         '
         Me.residenciaAutorLb.AutoSize = True
-        Me.residenciaAutorLb.Location = New System.Drawing.Point(70, 100)
+        Me.residenciaAutorLb.Location = New System.Drawing.Point(80, 133)
         Me.residenciaAutorLb.Name = "residenciaAutorLb"
-        Me.residenciaAutorLb.Size = New System.Drawing.Size(44, 21)
+        Me.residenciaAutorLb.Size = New System.Drawing.Size(54, 28)
         Me.residenciaAutorLb.TabIndex = 13
         Me.residenciaAutorLb.Text = "País: "
         '
         'inputNombre
         '
         Me.inputNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.inputNombre.Location = New System.Drawing.Point(128, 63)
-        Me.inputNombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.inputNombre.Location = New System.Drawing.Point(146, 84)
         Me.inputNombre.Name = "inputNombre"
-        Me.inputNombre.Size = New System.Drawing.Size(175, 29)
+        Me.inputNombre.Size = New System.Drawing.Size(200, 34)
         Me.inputNombre.TabIndex = 12
         '
         'nombreAutorNew
         '
         Me.nombreAutorNew.AutoSize = True
         Me.nombreAutorNew.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.nombreAutorNew.Location = New System.Drawing.Point(0, 64)
+        Me.nombreAutorNew.Location = New System.Drawing.Point(0, 85)
         Me.nombreAutorNew.Name = "nombreAutorNew"
-        Me.nombreAutorNew.Size = New System.Drawing.Size(114, 21)
+        Me.nombreAutorNew.Size = New System.Drawing.Size(144, 28)
         Me.nombreAutorNew.TabIndex = 11
         Me.nombreAutorNew.Text = "Nombre Autor:"
         '
         'inputLibro
         '
         Me.inputLibro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.inputLibro.Location = New System.Drawing.Point(127, 131)
-        Me.inputLibro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.inputLibro.Location = New System.Drawing.Point(145, 175)
         Me.inputLibro.Name = "inputLibro"
-        Me.inputLibro.Size = New System.Drawing.Size(175, 29)
+        Me.inputLibro.Size = New System.Drawing.Size(200, 34)
         Me.inputLibro.TabIndex = 10
         '
         'tituloLibroLb
         '
         Me.tituloLibroLb.AutoSize = True
         Me.tituloLibroLb.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.tituloLibroLb.Location = New System.Drawing.Point(58, 126)
+        Me.tituloLibroLb.Location = New System.Drawing.Point(66, 168)
         Me.tituloLibroLb.Name = "tituloLibroLb"
-        Me.tituloLibroLb.Size = New System.Drawing.Size(56, 21)
+        Me.tituloLibroLb.Size = New System.Drawing.Size(71, 28)
         Me.tituloLibroLb.TabIndex = 9
         Me.tituloLibroLb.Text = "Título: "
         '
@@ -301,9 +290,9 @@ Partial Class AgregarLibros1
         '
         Me.autorExistenteLb.AutoSize = True
         Me.autorExistenteLb.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.autorExistenteLb.Location = New System.Drawing.Point(58, 32)
+        Me.autorExistenteLb.Location = New System.Drawing.Point(66, 43)
         Me.autorExistenteLb.Name = "autorExistenteLb"
-        Me.autorExistenteLb.Size = New System.Drawing.Size(56, 21)
+        Me.autorExistenteLb.Size = New System.Drawing.Size(71, 28)
         Me.autorExistenteLb.TabIndex = 8
         Me.autorExistenteLb.Text = "Autor: "
         '
@@ -313,12 +302,11 @@ Partial Class AgregarLibros1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.agregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.agregar.Location = New System.Drawing.Point(600, 64)
-        Me.agregar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.agregar.MaximumSize = New System.Drawing.Size(99, 38)
-        Me.agregar.MinimumSize = New System.Drawing.Size(99, 38)
+        Me.agregar.Location = New System.Drawing.Point(686, 85)
+        Me.agregar.MaximumSize = New System.Drawing.Size(113, 51)
+        Me.agregar.MinimumSize = New System.Drawing.Size(113, 51)
         Me.agregar.Name = "agregar"
-        Me.agregar.Size = New System.Drawing.Size(99, 38)
+        Me.agregar.Size = New System.Drawing.Size(113, 51)
         Me.agregar.TabIndex = 8
         Me.agregar.Text = "Agregar"
         Me.agregar.UseVisualStyleBackColor = False
@@ -330,11 +318,12 @@ Partial Class AgregarLibros1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.FinalizarForm.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.FinalizarForm.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.FinalizarForm.Location = New System.Drawing.Point(600, 132)
-        Me.FinalizarForm.MaximumSize = New System.Drawing.Size(99, 36)
-        Me.FinalizarForm.MinimumSize = New System.Drawing.Size(99, 36)
+        Me.FinalizarForm.Location = New System.Drawing.Point(686, 176)
+        Me.FinalizarForm.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.FinalizarForm.MaximumSize = New System.Drawing.Size(113, 48)
+        Me.FinalizarForm.MinimumSize = New System.Drawing.Size(113, 48)
         Me.FinalizarForm.Name = "FinalizarForm"
-        Me.FinalizarForm.Size = New System.Drawing.Size(99, 36)
+        Me.FinalizarForm.Size = New System.Drawing.Size(113, 48)
         Me.FinalizarForm.TabIndex = 8
         Me.FinalizarForm.Text = "Finalizar"
         Me.FinalizarForm.UseVisualStyleBackColor = False
@@ -349,18 +338,18 @@ Partial Class AgregarLibros1
         Me.TableLayoutPanel1.Controls.Add(Me.Data, 0, 2)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 3
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 267.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(707, 462)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(808, 616)
         Me.TableLayoutPanel1.TabIndex = 9
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel1.Controls.Add(Me.retrocederAccion)
         Me.Panel1.Controls.Add(Me.agregar)
         Me.Panel1.Controls.Add(Me.FinalizarForm)
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -370,20 +359,32 @@ Partial Class AgregarLibros1
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(707, 200)
+        Me.Panel1.Size = New System.Drawing.Size(808, 267)
         Me.Panel1.TabIndex = 0
+        '
+        'retrocederAccion
+        '
+        Me.retrocederAccion.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.retrocederAccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.retrocederAccion.Image = Global.TallerPráctico3.My.Resources.Resources.boton
+        Me.retrocederAccion.Location = New System.Drawing.Point(180, 176)
+        Me.retrocederAccion.MaximumSize = New System.Drawing.Size(49, 48)
+        Me.retrocederAccion.MinimumSize = New System.Drawing.Size(49, 48)
+        Me.retrocederAccion.Name = "retrocederAccion"
+        Me.retrocederAccion.Size = New System.Drawing.Size(49, 48)
+        Me.retrocederAccion.TabIndex = 9
+        Me.retrocederAccion.UseVisualStyleBackColor = False
         '
         'AgregarLibros1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(707, 462)
+        Me.ClientSize = New System.Drawing.Size(808, 616)
         Me.ControlBox = False
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "AgregarLibros1"
@@ -423,4 +424,5 @@ Partial Class AgregarLibros1
     Friend WithEvents FinalizarForm As Button
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents retrocederAccion As Button
 End Class

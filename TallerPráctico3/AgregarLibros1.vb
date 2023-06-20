@@ -8,10 +8,10 @@ Public Class AgregarLibros1
     'Además actualiza cuando se hacen cambios en la tabla
 
     'conexion kendrick
-    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
 
     'Conexion dilan
-    'Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
 
 
     Public Sub MostrarLibros()
@@ -40,6 +40,7 @@ Public Class AgregarLibros1
         Ocultar()
         MostrarLibros()
         procesar.Enabled = False
+        retrocederAccion.Enabled = False
 
     End Sub
 
@@ -57,6 +58,8 @@ Public Class AgregarLibros1
             'Muestra los componentes para introducir los datos de nuevo libro con autor existente
             MostrarExiste()
             GroupBox1.Enabled = False
+            procesar.Enabled = False
+            retrocederAccion.Enabled = True
 
             'de deshabilita la caja de seleccion para no poder echar para atras 
 
@@ -83,6 +86,8 @@ Public Class AgregarLibros1
             'Muestra los componentes para poder introducir un nuevo libro
             MostrarNuevo()
             GroupBox1.Enabled = False
+            procesar.Enabled = False
+            retrocederAccion.Enabled = True
 
             'de deshabilita la caja de seleccion para no poder echar para atras 
 
@@ -323,6 +328,14 @@ Public Class AgregarLibros1
         opcionNuevo.Checked = False
         GroupBox2.Enabled = True
         GroupBox1.Enabled = True
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles retrocederAccion.Click
+        GroupBox1.Enabled = True
+        Ocultar()
+        retrocederAccion.Enabled = False
+        opcionExiste.Checked = False
+        opcionNuevo.Checked = False
     End Sub
 
 End Class
