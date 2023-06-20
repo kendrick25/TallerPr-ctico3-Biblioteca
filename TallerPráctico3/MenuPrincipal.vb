@@ -1,11 +1,13 @@
 ﻿Imports System.Runtime.InteropServices
 Imports System.Drawing
 Imports System.Data.SqlClient
+Imports TallerPráctico3
+
 Public Class MenuPrincipal
     'conexion kendrick
-    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
-    Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
 
     ' Variables para guardar la posición y el tamaño del formulario
     Dim mouseDownm As Boolean = False
@@ -515,6 +517,9 @@ Public Class MenuPrincipal
                 ' Llame a su función aquí
                 MostrarLibros()
             End If
+            'Actualizar CLiente 
+            ' Actualizar Agregar
+            ' Actualizar Eliminar
         End If
     End Sub
 

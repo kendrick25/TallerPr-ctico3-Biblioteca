@@ -100,7 +100,7 @@ Partial Class Clientes
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.GridColor = System.Drawing.Color.Gray
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 240)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 180)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(0)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -121,7 +121,7 @@ Partial Class Clientes
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView1.RowTemplate.Height = 25
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(986, 376)
+        Me.DataGridView1.Size = New System.Drawing.Size(863, 282)
         Me.DataGridView1.TabIndex = 0
         '
         'Label1
@@ -130,20 +130,19 @@ Partial Class Clientes
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(438, 4)
-        Me.Label1.MaximumSize = New System.Drawing.Size(127, 40)
-        Me.Label1.MinimumSize = New System.Drawing.Size(127, 40)
+        Me.Label1.Location = New System.Drawing.Point(383, 3)
+        Me.Label1.MaximumSize = New System.Drawing.Size(111, 30)
+        Me.Label1.MinimumSize = New System.Drawing.Size(111, 30)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(127, 40)
+        Me.Label1.Size = New System.Drawing.Size(111, 30)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "CLIENTES"
         '
         'TextName
         '
-        Me.TextName.Location = New System.Drawing.Point(15, 88)
-        Me.TextName.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextName.Location = New System.Drawing.Point(13, 66)
         Me.TextName.Name = "TextName"
-        Me.TextName.Size = New System.Drawing.Size(157, 27)
+        Me.TextName.Size = New System.Drawing.Size(138, 23)
         Me.TextName.TabIndex = 3
         '
         'LabelName
@@ -151,21 +150,21 @@ Partial Class Clientes
         Me.LabelName.AutoSize = True
         Me.LabelName.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LabelName.ForeColor = System.Drawing.Color.White
-        Me.LabelName.Location = New System.Drawing.Point(8, 60)
+        Me.LabelName.Location = New System.Drawing.Point(7, 45)
         Me.LabelName.Name = "LabelName"
-        Me.LabelName.Size = New System.Drawing.Size(91, 23)
+        Me.LabelName.Size = New System.Drawing.Size(77, 19)
         Me.LabelName.TabIndex = 4
         Me.LabelName.Text = " Nombre :"
         '
         'OpcionAgregar
         '
         Me.OpcionAgregar.AutoSize = True
+        Me.OpcionAgregar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.OpcionAgregar.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.OpcionAgregar.ForeColor = System.Drawing.Color.White
-        Me.OpcionAgregar.Location = New System.Drawing.Point(15, 15)
-        Me.OpcionAgregar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.OpcionAgregar.Location = New System.Drawing.Point(13, 11)
         Me.OpcionAgregar.Name = "OpcionAgregar"
-        Me.OpcionAgregar.Size = New System.Drawing.Size(93, 27)
+        Me.OpcionAgregar.Size = New System.Drawing.Size(77, 23)
         Me.OpcionAgregar.TabIndex = 5
         Me.OpcionAgregar.Text = "Agregar"
         Me.OpcionAgregar.UseVisualStyleBackColor = True
@@ -173,12 +172,12 @@ Partial Class Clientes
         'OpcionImprimir
         '
         Me.OpcionImprimir.AutoSize = True
+        Me.OpcionImprimir.Cursor = System.Windows.Forms.Cursors.Hand
         Me.OpcionImprimir.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.OpcionImprimir.ForeColor = System.Drawing.Color.White
-        Me.OpcionImprimir.Location = New System.Drawing.Point(126, 15)
-        Me.OpcionImprimir.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.OpcionImprimir.Location = New System.Drawing.Point(110, 11)
         Me.OpcionImprimir.Name = "OpcionImprimir"
-        Me.OpcionImprimir.Size = New System.Drawing.Size(157, 27)
+        Me.OpcionImprimir.Size = New System.Drawing.Size(129, 23)
         Me.OpcionImprimir.TabIndex = 6
         Me.OpcionImprimir.Text = "Imprimir Factura"
         Me.OpcionImprimir.UseVisualStyleBackColor = True
@@ -190,21 +189,20 @@ Partial Class Clientes
         Me.BtnAccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAccion.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.BtnAccion.ForeColor = System.Drawing.Color.White
-        Me.BtnAccion.Location = New System.Drawing.Point(552, 81)
+        Me.BtnAccion.Location = New System.Drawing.Point(483, 61)
         Me.BtnAccion.Margin = New System.Windows.Forms.Padding(0)
-        Me.BtnAccion.MaximumSize = New System.Drawing.Size(147, 43)
-        Me.BtnAccion.MinimumSize = New System.Drawing.Size(147, 43)
+        Me.BtnAccion.MaximumSize = New System.Drawing.Size(129, 32)
+        Me.BtnAccion.MinimumSize = New System.Drawing.Size(129, 32)
         Me.BtnAccion.Name = "BtnAccion"
-        Me.BtnAccion.Size = New System.Drawing.Size(147, 43)
+        Me.BtnAccion.Size = New System.Drawing.Size(129, 32)
         Me.BtnAccion.TabIndex = 7
         Me.BtnAccion.UseVisualStyleBackColor = False
         '
         'TxtPrestamo
         '
-        Me.TxtPrestamo.Location = New System.Drawing.Point(385, 88)
-        Me.TxtPrestamo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtPrestamo.Location = New System.Drawing.Point(337, 66)
         Me.TxtPrestamo.Name = "TxtPrestamo"
-        Me.TxtPrestamo.Size = New System.Drawing.Size(137, 27)
+        Me.TxtPrestamo.Size = New System.Drawing.Size(120, 23)
         Me.TxtPrestamo.TabIndex = 8
         '
         'LabelDiasPrestamos
@@ -212,21 +210,21 @@ Partial Class Clientes
         Me.LabelDiasPrestamos.AutoSize = True
         Me.LabelDiasPrestamos.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LabelDiasPrestamos.ForeColor = System.Drawing.Color.White
-        Me.LabelDiasPrestamos.Location = New System.Drawing.Point(378, 63)
+        Me.LabelDiasPrestamos.Location = New System.Drawing.Point(331, 47)
         Me.LabelDiasPrestamos.Name = "LabelDiasPrestamos"
-        Me.LabelDiasPrestamos.Size = New System.Drawing.Size(154, 23)
+        Me.LabelDiasPrestamos.Size = New System.Drawing.Size(120, 17)
         Me.LabelDiasPrestamos.TabIndex = 9
         Me.LabelDiasPrestamos.Text = "Dias de Prestamo:"
         '
         'CheckSi
         '
         Me.CheckSi.AutoSize = True
+        Me.CheckSi.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CheckSi.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.CheckSi.ForeColor = System.Drawing.Color.White
-        Me.CheckSi.Location = New System.Drawing.Point(214, 43)
-        Me.CheckSi.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.CheckSi.Location = New System.Drawing.Point(187, 32)
         Me.CheckSi.Name = "CheckSi"
-        Me.CheckSi.Size = New System.Drawing.Size(43, 27)
+        Me.CheckSi.Size = New System.Drawing.Size(37, 23)
         Me.CheckSi.TabIndex = 10
         Me.CheckSi.Text = "si"
         Me.CheckSi.UseVisualStyleBackColor = True
@@ -237,9 +235,9 @@ Partial Class Clientes
         Me.LabelAtraso.AutoSize = True
         Me.LabelAtraso.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LabelAtraso.ForeColor = System.Drawing.Color.White
-        Me.LabelAtraso.Location = New System.Drawing.Point(205, 7)
+        Me.LabelAtraso.Location = New System.Drawing.Point(179, 5)
         Me.LabelAtraso.Name = "LabelAtraso"
-        Me.LabelAtraso.Size = New System.Drawing.Size(164, 23)
+        Me.LabelAtraso.Size = New System.Drawing.Size(137, 19)
         Me.LabelAtraso.TabIndex = 11
         Me.LabelAtraso.Text = "Atraso de Entrega :"
         Me.LabelAtraso.Visible = False
@@ -247,12 +245,12 @@ Partial Class Clientes
         'CheckNo
         '
         Me.CheckNo.AutoSize = True
+        Me.CheckNo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CheckNo.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.CheckNo.ForeColor = System.Drawing.Color.White
-        Me.CheckNo.Location = New System.Drawing.Point(279, 43)
-        Me.CheckNo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.CheckNo.Location = New System.Drawing.Point(244, 32)
         Me.CheckNo.Name = "CheckNo"
-        Me.CheckNo.Size = New System.Drawing.Size(55, 27)
+        Me.CheckNo.Size = New System.Drawing.Size(46, 23)
         Me.CheckNo.TabIndex = 12
         Me.CheckNo.Text = "No"
         Me.CheckNo.UseVisualStyleBackColor = True
@@ -260,10 +258,9 @@ Partial Class Clientes
         '
         'TextMorosidad
         '
-        Me.TextMorosidad.Location = New System.Drawing.Point(409, 44)
-        Me.TextMorosidad.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextMorosidad.Location = New System.Drawing.Point(358, 33)
         Me.TextMorosidad.Name = "TextMorosidad"
-        Me.TextMorosidad.Size = New System.Drawing.Size(137, 27)
+        Me.TextMorosidad.Size = New System.Drawing.Size(120, 23)
         Me.TextMorosidad.TabIndex = 13
         Me.TextMorosidad.Visible = False
         '
@@ -272,9 +269,9 @@ Partial Class Clientes
         Me.LabelMorosidad.AutoSize = True
         Me.LabelMorosidad.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LabelMorosidad.ForeColor = System.Drawing.Color.White
-        Me.LabelMorosidad.Location = New System.Drawing.Point(408, 7)
+        Me.LabelMorosidad.Location = New System.Drawing.Point(357, 5)
         Me.LabelMorosidad.Name = "LabelMorosidad"
-        Me.LabelMorosidad.Size = New System.Drawing.Size(170, 23)
+        Me.LabelMorosidad.Size = New System.Drawing.Size(143, 19)
         Me.LabelMorosidad.TabIndex = 14
         Me.LabelMorosidad.Text = "Dias de Morosidad :"
         Me.LabelMorosidad.Visible = False
@@ -284,36 +281,37 @@ Partial Class Clientes
         Me.labelLibros.AutoSize = True
         Me.labelLibros.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.labelLibros.ForeColor = System.Drawing.Color.White
-        Me.labelLibros.Location = New System.Drawing.Point(194, 56)
+        Me.labelLibros.Location = New System.Drawing.Point(170, 42)
         Me.labelLibros.Name = "labelLibros"
-        Me.labelLibros.Size = New System.Drawing.Size(69, 23)
+        Me.labelLibros.Size = New System.Drawing.Size(58, 19)
         Me.labelLibros.TabIndex = 15
         Me.labelLibros.Text = "Libros :"
         '
         'ComboLibros
         '
+        Me.ComboLibros.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ComboLibros.FormattingEnabled = True
-        Me.ComboLibros.Location = New System.Drawing.Point(194, 89)
-        Me.ComboLibros.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.ComboLibros.Location = New System.Drawing.Point(170, 67)
         Me.ComboLibros.Name = "ComboLibros"
-        Me.ComboLibros.Size = New System.Drawing.Size(157, 28)
+        Me.ComboLibros.Size = New System.Drawing.Size(138, 23)
         Me.ComboLibros.TabIndex = 16
         '
         'FinzalizarClientes
         '
         Me.FinzalizarClientes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.FinzalizarClientes.BackColor = System.Drawing.Color.Red
+        Me.FinzalizarClientes.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FinzalizarClientes.FlatAppearance.BorderSize = 0
         Me.FinzalizarClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.FinzalizarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.FinzalizarClientes.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.FinzalizarClientes.ForeColor = System.Drawing.Color.White
-        Me.FinzalizarClientes.Location = New System.Drawing.Point(890, 15)
+        Me.FinzalizarClientes.Location = New System.Drawing.Point(779, 11)
         Me.FinzalizarClientes.Margin = New System.Windows.Forms.Padding(0)
-        Me.FinzalizarClientes.MaximumSize = New System.Drawing.Size(86, 41)
-        Me.FinzalizarClientes.MinimumSize = New System.Drawing.Size(86, 41)
+        Me.FinzalizarClientes.MaximumSize = New System.Drawing.Size(75, 31)
+        Me.FinzalizarClientes.MinimumSize = New System.Drawing.Size(75, 31)
         Me.FinzalizarClientes.Name = "FinzalizarClientes"
-        Me.FinzalizarClientes.Size = New System.Drawing.Size(86, 41)
+        Me.FinzalizarClientes.Size = New System.Drawing.Size(75, 31)
         Me.FinzalizarClientes.TabIndex = 17
         Me.FinzalizarClientes.Text = "Finalizar"
         Me.FinzalizarClientes.UseVisualStyleBackColor = False
@@ -321,13 +319,13 @@ Partial Class Clientes
         'EstadoDañado
         '
         Me.EstadoDañado.AutoSize = True
+        Me.EstadoDañado.Cursor = System.Windows.Forms.Cursors.Hand
         Me.EstadoDañado.Enabled = False
         Me.EstadoDañado.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.EstadoDañado.ForeColor = System.Drawing.Color.White
-        Me.EstadoDañado.Location = New System.Drawing.Point(105, 47)
-        Me.EstadoDañado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.EstadoDañado.Location = New System.Drawing.Point(92, 35)
         Me.EstadoDañado.Name = "EstadoDañado"
-        Me.EstadoDañado.Size = New System.Drawing.Size(92, 27)
+        Me.EstadoDañado.Size = New System.Drawing.Size(76, 23)
         Me.EstadoDañado.TabIndex = 20
         Me.EstadoDañado.Text = "Dañado"
         Me.EstadoDañado.UseVisualStyleBackColor = True
@@ -337,22 +335,22 @@ Partial Class Clientes
         Me.LabelEstadoLibro.AutoSize = True
         Me.LabelEstadoLibro.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LabelEstadoLibro.ForeColor = System.Drawing.Color.White
-        Me.LabelEstadoLibro.Location = New System.Drawing.Point(9, 7)
+        Me.LabelEstadoLibro.Location = New System.Drawing.Point(8, 5)
         Me.LabelEstadoLibro.Name = "LabelEstadoLibro"
-        Me.LabelEstadoLibro.Size = New System.Drawing.Size(145, 23)
+        Me.LabelEstadoLibro.Size = New System.Drawing.Size(121, 19)
         Me.LabelEstadoLibro.TabIndex = 19
         Me.LabelEstadoLibro.Text = "Estado de Libro :"
         '
         'EstadoNormal
         '
         Me.EstadoNormal.AutoSize = True
+        Me.EstadoNormal.Cursor = System.Windows.Forms.Cursors.Hand
         Me.EstadoNormal.Enabled = False
         Me.EstadoNormal.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.EstadoNormal.ForeColor = System.Drawing.Color.White
-        Me.EstadoNormal.Location = New System.Drawing.Point(15, 47)
-        Me.EstadoNormal.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.EstadoNormal.Location = New System.Drawing.Point(13, 35)
         Me.EstadoNormal.Name = "EstadoNormal"
-        Me.EstadoNormal.Size = New System.Drawing.Size(89, 27)
+        Me.EstadoNormal.Size = New System.Drawing.Size(73, 23)
         Me.EstadoNormal.TabIndex = 18
         Me.EstadoNormal.Text = "Normal"
         Me.EstadoNormal.UseVisualStyleBackColor = True
@@ -362,9 +360,9 @@ Partial Class Clientes
         Me.ErrorName.AutoSize = True
         Me.ErrorName.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ErrorName.ForeColor = System.Drawing.Color.Red
-        Me.ErrorName.Location = New System.Drawing.Point(177, 92)
+        Me.ErrorName.Location = New System.Drawing.Point(155, 69)
         Me.ErrorName.Name = "ErrorName"
-        Me.ErrorName.Size = New System.Drawing.Size(21, 28)
+        Me.ErrorName.Size = New System.Drawing.Size(17, 21)
         Me.ErrorName.TabIndex = 22
         Me.ErrorName.Text = "*"
         Me.ErrorName.Visible = False
@@ -374,9 +372,9 @@ Partial Class Clientes
         Me.ErrorLibro.AutoSize = True
         Me.ErrorLibro.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ErrorLibro.ForeColor = System.Drawing.Color.Red
-        Me.ErrorLibro.Location = New System.Drawing.Point(359, 91)
+        Me.ErrorLibro.Location = New System.Drawing.Point(314, 68)
         Me.ErrorLibro.Name = "ErrorLibro"
-        Me.ErrorLibro.Size = New System.Drawing.Size(21, 28)
+        Me.ErrorLibro.Size = New System.Drawing.Size(17, 21)
         Me.ErrorLibro.TabIndex = 23
         Me.ErrorLibro.Text = "*"
         Me.ErrorLibro.Visible = False
@@ -386,9 +384,9 @@ Partial Class Clientes
         Me.ErrorPrestamo.AutoSize = True
         Me.ErrorPrestamo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ErrorPrestamo.ForeColor = System.Drawing.Color.Red
-        Me.ErrorPrestamo.Location = New System.Drawing.Point(529, 91)
+        Me.ErrorPrestamo.Location = New System.Drawing.Point(463, 68)
         Me.ErrorPrestamo.Name = "ErrorPrestamo"
-        Me.ErrorPrestamo.Size = New System.Drawing.Size(21, 28)
+        Me.ErrorPrestamo.Size = New System.Drawing.Size(17, 21)
         Me.ErrorPrestamo.TabIndex = 24
         Me.ErrorPrestamo.Text = "*"
         Me.ErrorPrestamo.Visible = False
@@ -400,12 +398,12 @@ Partial Class Clientes
         Me.PagarTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.PagarTodo.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.PagarTodo.ForeColor = System.Drawing.Color.White
-        Me.PagarTodo.Location = New System.Drawing.Point(713, 81)
+        Me.PagarTodo.Location = New System.Drawing.Point(624, 61)
         Me.PagarTodo.Margin = New System.Windows.Forms.Padding(0)
-        Me.PagarTodo.MaximumSize = New System.Drawing.Size(147, 43)
-        Me.PagarTodo.MinimumSize = New System.Drawing.Size(147, 43)
+        Me.PagarTodo.MaximumSize = New System.Drawing.Size(129, 32)
+        Me.PagarTodo.MinimumSize = New System.Drawing.Size(129, 32)
         Me.PagarTodo.Name = "PagarTodo"
-        Me.PagarTodo.Size = New System.Drawing.Size(147, 43)
+        Me.PagarTodo.Size = New System.Drawing.Size(129, 32)
         Me.PagarTodo.TabIndex = 25
         Me.PagarTodo.UseVisualStyleBackColor = False
         '
@@ -414,9 +412,9 @@ Partial Class Clientes
         Me.ErrorMorosidad.AutoSize = True
         Me.ErrorMorosidad.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ErrorMorosidad.ForeColor = System.Drawing.Color.Red
-        Me.ErrorMorosidad.Location = New System.Drawing.Point(552, 45)
+        Me.ErrorMorosidad.Location = New System.Drawing.Point(483, 34)
         Me.ErrorMorosidad.Name = "ErrorMorosidad"
-        Me.ErrorMorosidad.Size = New System.Drawing.Size(21, 28)
+        Me.ErrorMorosidad.Size = New System.Drawing.Size(17, 21)
         Me.ErrorMorosidad.TabIndex = 26
         Me.ErrorMorosidad.Text = "*"
         Me.ErrorMorosidad.Visible = False
@@ -426,9 +424,9 @@ Partial Class Clientes
         Me.LabelDeudaPendiente.AutoSize = True
         Me.LabelDeudaPendiente.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LabelDeudaPendiente.ForeColor = System.Drawing.Color.White
-        Me.LabelDeudaPendiente.Location = New System.Drawing.Point(613, 33)
+        Me.LabelDeudaPendiente.Location = New System.Drawing.Point(536, 25)
         Me.LabelDeudaPendiente.Name = "LabelDeudaPendiente"
-        Me.LabelDeudaPendiente.Size = New System.Drawing.Size(116, 23)
+        Me.LabelDeudaPendiente.Size = New System.Drawing.Size(97, 19)
         Me.LabelDeudaPendiente.TabIndex = 27
         Me.LabelDeudaPendiente.Text = "Deuda Total :"
         '
@@ -437,9 +435,9 @@ Partial Class Clientes
         Me.LabelPrecioPagarLibro.AutoSize = True
         Me.LabelPrecioPagarLibro.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LabelPrecioPagarLibro.ForeColor = System.Drawing.Color.Red
-        Me.LabelPrecioPagarLibro.Location = New System.Drawing.Point(743, 33)
+        Me.LabelPrecioPagarLibro.Location = New System.Drawing.Point(650, 25)
         Me.LabelPrecioPagarLibro.Name = "LabelPrecioPagarLibro"
-        Me.LabelPrecioPagarLibro.Size = New System.Drawing.Size(18, 23)
+        Me.LabelPrecioPagarLibro.Size = New System.Drawing.Size(15, 19)
         Me.LabelPrecioPagarLibro.TabIndex = 28
         Me.LabelPrecioPagarLibro.Text = "*"
         '
@@ -456,9 +454,9 @@ Partial Class Clientes
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 240.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 180.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(986, 616)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(863, 462)
         Me.TableLayoutPanel1.TabIndex = 29
         '
         'TableLayoutPanel2
@@ -472,9 +470,9 @@ Partial Class Clientes
         Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 133.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(986, 240)
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(863, 180)
         Me.TableLayoutPanel2.TabIndex = 30
         '
         'Panel2
@@ -498,7 +496,7 @@ Partial Class Clientes
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(986, 133)
+        Me.Panel2.Size = New System.Drawing.Size(863, 100)
         Me.Panel2.TabIndex = 0
         '
         'Panel3
@@ -516,22 +514,21 @@ Partial Class Clientes
         Me.Panel3.Controls.Add(Me.LabelDeudaPendiente)
         Me.Panel3.Controls.Add(Me.EstadoNormal)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(0, 133)
+        Me.Panel3.Location = New System.Drawing.Point(0, 100)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(986, 107)
+        Me.Panel3.Size = New System.Drawing.Size(863, 80)
         Me.Panel3.TabIndex = 1
         '
         'Clientes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(986, 616)
+        Me.ClientSize = New System.Drawing.Size(863, 462)
         Me.ControlBox = False
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Clientes"
