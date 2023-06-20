@@ -3,9 +3,9 @@ Imports System.Drawing
 Imports System.Data.SqlClient
 Public Class MenuPrincipal
     'conexion kendrick
-    'Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
+    Public conex As New SqlConnection("Data Source=DESKTOP-GQPJ6BS;Initial Catalog=Biblioteca;Integrated Security=True")
     'Conexion dilan
-    Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
+    'Public conex As New SqlConnection("Data Source=DESKTOP-8ELH4DT;Initial Catalog=Biblioteca;Integrated Security=True")
 
     ' Variables para guardar la posición y el tamaño del formulario
     Dim mouseDownm As Boolean = False
@@ -205,11 +205,17 @@ Public Class MenuPrincipal
     End Sub
     '------------------------------------------
     Private Sub BibliotecaArchivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BibliotecaArchivosToolStripMenuItem.Click
-        'imagen de recursos
-        Panel1.BackColor = Color.Silver
-        Dim Img As Image = My.Resources.Logo_2023
-        Panel1.BackgroundImage = Img
-        Panel1.BackgroundImageLayout = ImageLayout.Zoom
+        If ContForms.Visible = True Then
+            'imagen de recursos
+            Panel1.BackColor = Color.Black
+            Panel1.BackgroundImage = Nothing
+        Else
+            'imagen de recursos
+            Panel1.BackColor = Color.White
+            Dim Img As Image = My.Resources.Logo_2023
+            Panel1.BackgroundImage = Img
+            Panel1.BackgroundImageLayout = ImageLayout.Zoom
+        End If
         'nosotros visible
         PictureBox1.Visible = False
         PictureBox2.Visible = False
@@ -251,7 +257,7 @@ Public Class MenuPrincipal
         Else
             ContForms.Visible = False
             'imagen de recursos
-            Panel1.BackColor = Color.Silver
+            Panel1.BackColor = Color.White
             Dim Img As Image = My.Resources.Logo_2023
             Panel1.BackgroundImage = Img
             Panel1.BackgroundImageLayout = ImageLayout.Zoom
@@ -278,11 +284,17 @@ Public Class MenuPrincipal
             newPage.Controls.Add(ContenidoMenuPrincipal)
             ContForms.TabPages.Add(newPage)
             ContForms.Visible = True
-            'imagen de recursos
-            Panel1.BackColor = Color.Silver
-            Dim Img As Image = My.Resources.Logo_2023
-            Panel1.BackgroundImage = Img
-            Panel1.BackgroundImageLayout = ImageLayout.Zoom
+            If ContForms.Visible = True Then
+                'imagen de recursos
+                Panel1.BackColor = Color.Black
+                Panel1.BackgroundImage = Nothing
+            Else
+                'imagen de recursos
+                Panel1.BackColor = Color.White
+                Dim Img As Image = My.Resources.Logo_2023
+                Panel1.BackgroundImage = Img
+                Panel1.BackgroundImageLayout = ImageLayout.Zoom
+            End If
             'nosotros visible
             PictureBox1.Visible = False
             PictureBox2.Visible = False
